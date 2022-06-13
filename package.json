@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "dev": "concurrently \"wsrun --parallel dev\"",
-    "frontend": "yarn workspace frontend"
+    "client": "yarn workspace client",
+    "server": "yarn workspace server"
   },
   "workspaces": [
     "packages/*"
@@ -17,5 +18,6 @@
   },
   "keywords": [],
   "author": "",
-  "description": ""
+  "description": "",
+  "packageManager": "yarn@3.2.1"
 }
