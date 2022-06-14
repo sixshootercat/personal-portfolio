@@ -5,11 +5,10 @@ import {
   ColorSchemeProvider,
   MantineProvider,
 } from "@mantine/core";
-import { useHotkeys } from "@mantine/hooks";
-import { GetServerSidePropsContext, NextPage } from "next";
+import { useHotkeys, useLocalStorage } from "@mantine/hooks";
+import { NextPage } from "next";
 import { ReactElement, ReactNode, useState } from "react";
 import { AppProps } from "next/app";
-import { getCookie, setCookies } from "cookies-next";
 import { themeConfig } from "@/config/theme.config";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
@@ -29,15 +28,14 @@ const MyApp = ({
   pageProps,
   colorSchemeProp,
 }: AppPropsWithLayout) => {
-  const [colorScheme, setColorScheme] = useState<ColorScheme>(colorSchemeProp);
+  const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
+    key: "mantine-color-scheme",
+    defaultValue: "light",
+    getInitialValueInEffect: true,
+  });
 
   const toggleColorScheme = (value?: ColorScheme) => {
-    const nextColorScheme =
-      value || (colorScheme === "dark" ? "light" : "dark");
-    setColorScheme(nextColorScheme);
-    setCookies("mantine-color-scheme", nextColorScheme, {
-      maxAge: 60 * 60 * 24 * 30,
-    });
+    setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
   };
 
   const getLayout =
@@ -59,12 +57,6 @@ const MyApp = ({
       </MantineProvider>
     </ColorSchemeProvider>
   );
-};
-
-MyApp.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => {
-  return {
-    colorSchemeProp: getCookie("mantine-color-scheme", ctx) || "light",
-  };
 };
 
 export default MyApp;

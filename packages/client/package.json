@@ -17,7 +17,6 @@
     "@mantine/next": "4.2.6",
     "@portabletext/react": "1.0.6",
     "@types/lodash": "4.14.182",
-    "cookies-next": "2.0.4",
     "lodash": "4.17.21",
     "next": "12.1.6",
     "next-sanity": "0.5.2",
