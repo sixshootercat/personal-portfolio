@@ -1,17 +1,17 @@
 import { Box, Divider, useMantineColorScheme } from "@mantine/core";
 import React, { ReactNode } from "react";
 
-type NavbarItemProps = {
+type MenuOverlayItemProps = {
   children?: ReactNode;
   onClick?: () => void;
   dividerEl?: ReactNode;
 };
 
-export const NavbarItem = ({
+export const MenuOverlayItem = ({
   children,
   onClick = () => undefined,
   dividerEl = <Divider size="xs" sx={{ width: "100%" }} />,
-}: NavbarItemProps) => {
+}: MenuOverlayItemProps) => {
   const { colorScheme } = useMantineColorScheme();
   const dark = colorScheme === "dark";
 

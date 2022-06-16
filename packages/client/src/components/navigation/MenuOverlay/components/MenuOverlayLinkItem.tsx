@@ -1,22 +1,25 @@
-import { NavItem } from "@/components/layout/MainLayout/components/Header";
+import { NavItem } from "@/components/navigation/Header";
 import { createStyles } from "@mantine/core";
 import Link from "next/link";
-import { NavbarItem } from ".";
+import { MenuOverlayItem } from ".";
 
-type NavbarLinkItemProps = {
+type MenuOverlayLinkItemProps = {
   item: NavItem;
   onClick: () => void;
 };
 
-export const NavbarLinkItem = ({ item, onClick }: NavbarLinkItemProps) => {
+export const MenuOverlayLinkItem = ({
+  item,
+  onClick,
+}: MenuOverlayLinkItemProps) => {
   const { classes } = useStyles();
 
   return (
-    <NavbarItem onClick={onClick}>
+    <MenuOverlayItem onClick={onClick}>
       <Link href={item.link} passHref>
         <a className={classes.navItemMobile}>{item.name}</a>
       </Link>
-    </NavbarItem>
+    </MenuOverlayItem>
   );
 };
 

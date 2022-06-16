@@ -1,3 +1,3 @@
 export { Header } from "./Header";
-export { HEADER_ELEMS } from "./Header.constants";
+export { MockHeaderElems } from "./MockHeaderElems";
 export type { NavItem } from "./Header.types";

@@ -1,24 +1,24 @@
 import React, { ReactNode } from "react";
 import { createStyles, Navbar as MantineNavbar } from "@mantine/core";
 
-type NavbarProps = {
+type MenuOverlayProps = {
   children: ReactNode;
-  burgerOpened: boolean;
+  isOpen: boolean;
 };
 
-export const Navbar = ({ children, burgerOpened }: NavbarProps) => {
+export const MenuOverlay = ({ children, isOpen }: MenuOverlayProps) => {
   const { classes } = useStyles();
 
   return (
     <MantineNavbar
       fixed
-      className={classes.mobileMenu}
+      className={classes.container}
       sx={{
         marginTop: "90px",
       }}
       width={{ base: "100%", sm: 0 }}
       height="100%"
-      hidden={!burgerOpened}
+      hidden={!isOpen}
     >
       {children}
     </MantineNavbar>
@@ -26,7 +26,7 @@ export const Navbar = ({ children, burgerOpened }: NavbarProps) => {
 };
 
 const useStyles = createStyles((theme) => ({
-  mobileMenu: {
+  container: {
     [theme.fn.largerThan("sm")]: {
       display: "none",
     },

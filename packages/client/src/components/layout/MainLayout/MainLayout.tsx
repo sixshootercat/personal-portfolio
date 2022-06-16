@@ -1,29 +1,15 @@
 import React, { ReactNode, useState } from "react";
-import { Footer, Header, Navbar } from "./components";
-import { HEADER_ELEMS } from "./components/Header";
-import { FOOTER_ELEMS } from "./components/Footer";
-import {
-  AppShell,
-  useMantineTheme,
-  Box,
-  Group,
-  Burger,
-  createStyles,
-  useMantineColorScheme,
-  CSSObject,
-  Text,
-  Divider,
-} from "@mantine/core";
+import { Footer, Header, MenuOverlay } from "@/components/navigation";
+import { AppShell, useMantineTheme, Box } from "@mantine/core";
 import { ScrollToTop } from "@/components/navigation";
 import Link from "next/link";
 import { useIsClient } from "@/hooks";
-import { ThemeIcon } from "@/components/icons";
-import { useMediaQuery, useScrollLock } from "@mantine/hooks";
-import { NavbarLinkItem } from "@/components/layout/MainLayout/components/Navbar";
-import { NavbarThemeItem } from "@/components/layout/MainLayout/components/Navbar";
+import { useScrollLock } from "@mantine/hooks";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
-import { MEDIA_QUERIES } from "src/constants";
+import { MockMenuOverlayElems } from "@/components/navigation/MenuOverlay/";
+import { MockHeaderElems } from "@/components/navigation/Header/";
+import { MockFooterElems } from "@/components/navigation/Footer/";
 
 const HeaderLogo = ({
   bgColor,
@@ -51,31 +37,11 @@ const HeaderLogo = ({
   );
 };
 
-const FooterLogo = ({
-  el = <FontAwesomeIcon icon={faHome} />,
-}: {
-  el?: ReactNode;
-}) => {
-  return <Link href="/">{el}</Link>;
-};
-
 type MainLayoutProps = {
   children: React.ReactNode;
   marginTop?: string | number;
   bodyPadding?: number;
   height?: number;
-};
-
-const filterElemsByCol = (
-  elems: {
-    col: number;
-    id: number;
-    name: string;
-    link: string;
-  }[],
-  col: 1 | 2
-) => {
-  return elems.filter((el) => el.col === col);
 };
 
 export const MainLayout = ({
@@ -85,140 +51,10 @@ export const MainLayout = ({
   height = 0,
 }: MainLayoutProps) => {
   const theme = useMantineTheme();
-  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
-  const dark = colorScheme === "dark";
-  const isMobile = useMediaQuery(MEDIA_QUERIES.mobile);
 
   const [, setScrollLocked] = useScrollLock(false);
-  const { classes } = useStyles();
   const isClient = useIsClient();
-  const [burgerOpened, setBurgerOpened] = useState(false);
-
-  const col1 = filterElemsByCol(FOOTER_ELEMS, 1);
-  const col2 = filterElemsByCol(FOOTER_ELEMS, 2);
-
-  const makeNavbarElems = () => {
-    return (
-      <Group direction="column" sx={{ height: "100%", gap: 0 }}>
-        {HEADER_ELEMS.map((el) => {
-          return (
-            <NavbarLinkItem
-              item={el}
-              key={el.id}
-              onClick={() => setBurgerOpened(false)}
-            />
-          );
-        })}
-        <NavbarThemeItem onClick={() => toggleColorScheme()} />
-      </Group>
-    );
-  };
-
-  const makeHeaderElems = () => {
-    return (
-      <>
-        <div className={classes.headerMobile}>
-          <HeaderLogo bgColor={theme.colors.cyan[4]} />
-          <Burger
-            opened={burgerOpened}
-            onClick={() => {
-              setScrollLocked((p) => !p);
-              setBurgerOpened((o) => !o);
-            }}
-            size={30}
-          />
-        </div>
-        <div className={classes.headerDesktop}>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              width: "100%",
-              height: "100%",
-            }}
-          >
-            <HeaderLogo bgColor={theme.colors.cyan[4]} />
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <ThemeIcon />
-              {HEADER_ELEMS.map((el) => (
-                <Box
-                  sx={{ margin: "0 1rem", color: dark ? "white" : "black" }}
-                  key={el.id}
-                >
-                  <Link href={el.link}>{el.name}</Link>
-                </Box>
-              ))}
-            </Box>
-          </Box>
-        </div>
-      </>
-    );
-  };
-
-  const makeFooterElems = () => {
-    return (
-      <Group
-        sx={(theme) => ({
-          [theme.fn.largerThan("xs")]: {
-            flexDirection: "row",
-            justifyContent: "flex-start",
-            marginLeft: "2rem",
-          },
-          [theme.fn.smallerThan("xs")]: {
-            flexDirection: "column",
-          },
-        })}
-        spacing={40}
-      >
-        <Box
-          sx={{
-            width: 100,
-            cursor: "pointer",
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          <FooterLogo />
-        </Box>
-        <Group direction="column" sx={{ width: 100 }}>
-          {col1.map((el) => (
-            <Text
-              key={el.id}
-              sx={{
-                ":hover": {
-                  color: theme.colors.cyan[4],
-                },
-              }}
-            >
-              <Link href={el.link}>{el.name}</Link>
-            </Text>
-          ))}
-        </Group>
-        {isMobile && <Divider size="xs" sx={{ width: "50%" }} />}
-        <Group direction="column" sx={{ width: 100 }}>
-          {col2.map((el) => (
-            <Text
-              sx={{
-                ":hover": {
-                  color: theme.colors.cyan[4],
-                },
-              }}
-              key={el.id}
-            >
-              <Link href={el.link}>{el.name}</Link>
-            </Text>
-          ))}
-        </Group>
-      </Group>
-    );
-  };
+  const [navMenuOpened, setNavMenuOpened] = useState(false);
 
   // NOTE: avoid server and client rendering result mismatch
   if (!isClient) return null;
@@ -234,9 +70,27 @@ export const MainLayout = ({
         },
       }}
       padding={bodyPadding}
-      header={<Header>{makeHeaderElems()}</Header>}
-      navbar={<Navbar burgerOpened={burgerOpened}>{makeNavbarElems()}</Navbar>}
-      footer={<Footer>{makeFooterElems()}</Footer>}
+      header={
+        <Header>
+          <MockHeaderElems
+            isOpen={navMenuOpened}
+            onClick={() => {
+              setScrollLocked((p) => !p);
+              setNavMenuOpened((o) => !o);
+            }}
+          />
+        </Header>
+      }
+      navbar={
+        <MenuOverlay isOpen={navMenuOpened}>
+          <MockMenuOverlayElems onItemClick={() => setNavMenuOpened(false)} />
+        </MenuOverlay>
+      }
+      footer={
+        <Footer>
+          <MockFooterElems />
+        </Footer>
+      }
     >
       <Box
         sx={{
@@ -250,24 +104,3 @@ export const MainLayout = ({
     </AppShell>
   );
 };
-
-const headerStyles: CSSObject = {
-  display: "flex",
-  alignItems: "center",
-  height: "100%",
-};
-
-const useStyles = createStyles((theme) => ({
-  headerMobile: {
-    [theme.fn.largerThan("sm")]: {
-      display: "none",
-    },
-    ...headerStyles,
-  },
-  headerDesktop: {
-    [theme.fn.smallerThan("sm")]: {
-      display: "none",
-    },
-    ...headerStyles,
-  },
-}));
