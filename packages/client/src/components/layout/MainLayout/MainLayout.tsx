@@ -1,41 +1,12 @@
-import React, { ReactNode, useState } from "react";
+import React, { useState } from "react";
 import { Footer, Header, MenuOverlay } from "@/components/navigation";
 import { AppShell, useMantineTheme, Box } from "@mantine/core";
 import { ScrollToTop } from "@/components/navigation";
-import Link from "next/link";
 import { useIsClient } from "@/hooks";
 import { useScrollLock } from "@mantine/hooks";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { MockMenuOverlayElems } from "@/components/navigation/MenuOverlay/";
 import { MockHeaderElems } from "@/components/navigation/Header/";
 import { MockFooterElems } from "@/components/navigation/Footer/";
-
-const HeaderLogo = ({
-  bgColor,
-  el = <FontAwesomeIcon size="lg" icon={faHome} />,
-  size = 100,
-}: {
-  bgColor: string;
-  el?: ReactNode;
-  size?: number;
-}) => {
-  return (
-    <Box
-      sx={{
-        height: "100%",
-        width: `${size}px`,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: bgColor,
-        cursor: "pointer",
-      }}
-    >
-      <Link href="/">{el}</Link>
-    </Box>
-  );
-};
 
 type MainLayoutProps = {
   children: React.ReactNode;
@@ -83,7 +54,12 @@ export const MainLayout = ({
       }
       navbar={
         <MenuOverlay isOpen={navMenuOpened}>
-          <MockMenuOverlayElems onItemClick={() => setNavMenuOpened(false)} />
+          <MockMenuOverlayElems
+            onItemClick={() => {
+              setScrollLocked((p) => !p);
+              setNavMenuOpened(false);
+            }}
+          />
         </MenuOverlay>
       }
       footer={

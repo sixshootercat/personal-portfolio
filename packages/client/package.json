@@ -22,7 +22,8 @@
     "next-sanity": "0.5.2",
     "next-sanity-image": "3.2.1",
     "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react-dom": "18.1.0",
+    "suspend-react": "^0.0.8"
   },
   "devDependencies": {
     "@babel/helper-module-imports": "7.16.7",

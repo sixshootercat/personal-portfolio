@@ -7,7 +7,7 @@ import {
 } from "@mantine/core";
 import { useHotkeys, useLocalStorage } from "@mantine/hooks";
 import { NextPage } from "next";
-import { ReactElement, ReactNode, useState } from "react";
+import { ReactElement, ReactNode, Suspense, useState } from "react";
 import { AppProps } from "next/app";
 import { themeConfig } from "@/config/theme.config";
 import "@fortawesome/fontawesome-svg-core/styles.css";
