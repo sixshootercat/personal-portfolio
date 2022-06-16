@@ -52,7 +52,10 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
         withNormalizeCSS
         withGlobalStyles
       >
-        <NextNProgress color={theme.colors.cyan[4]} />
+        <NextNProgress
+          color={theme.colors.cyan[4]}
+          options={{ showSpinner: false }}
+        />
         {getLayout(<Component {...pageProps} />)}
       </MantineProvider>
     </ColorSchemeProvider>
