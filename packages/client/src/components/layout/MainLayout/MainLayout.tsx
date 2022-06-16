@@ -57,7 +57,7 @@ export const MainLayout = ({
           <MockMenuOverlayElems
             onItemClick={() => {
               setScrollLocked((p) => !p);
-              setNavMenuOpened(false);
+              setNavMenuOpened((o) => !o);
             }}
           />
         </MenuOverlay>

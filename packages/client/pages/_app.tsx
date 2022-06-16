@@ -1,9 +1,11 @@
 import "../styles/globals.css";
 import { MainLayout } from "@/components/layout";
+import NextNProgress from "nextjs-progressbar";
 import {
   ColorScheme,
   ColorSchemeProvider,
   MantineProvider,
+  useMantineTheme,
 } from "@mantine/core";
 import { useHotkeys, useLocalStorage } from "@mantine/hooks";
 import { NextPage } from "next";
@@ -20,19 +22,16 @@ type NextPageWithLayout = NextPage & {
 
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
-  colorSchemeProp: ColorScheme;
 };
 
-const MyApp = ({
-  Component,
-  pageProps,
-  colorSchemeProp,
-}: AppPropsWithLayout) => {
+const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
     key: "mantine-color-scheme",
     defaultValue: "light",
     getInitialValueInEffect: true,
   });
+
+  const theme = useMantineTheme();
 
   const toggleColorScheme = (value?: ColorScheme) => {
     setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
@@ -53,6 +52,7 @@ const MyApp = ({
         withNormalizeCSS
         withGlobalStyles
       >
+        <NextNProgress color={theme.colors.cyan[4]} />
         {getLayout(<Component {...pageProps} />)}
       </MantineProvider>
     </ColorSchemeProvider>
