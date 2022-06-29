@@ -1,6 +1,6 @@
-import { Home as HomeContent } from "@/containers/Home";
-import { ReactElement } from "react";
-import { MainLayout } from "@/components/layout";
+import { Home as HomeContent } from '@/containers/Home';
+import { ReactElement } from 'react';
+import { MainLayout } from '@/components/layouts';
 
 const Home = () => {
   return (
@@ -10,7 +10,7 @@ const Home = () => {
   );
 };
 
-Home.getLayout = function getLayout(page: ReactElement) {
+Home.getLayout = (page: ReactElement) => {
   return <MainLayout height={100}>{page}</MainLayout>;
 };
 

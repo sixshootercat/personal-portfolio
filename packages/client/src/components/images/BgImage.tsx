@@ -1,5 +1,5 @@
-import { Box } from "@mantine/core";
-import Image from "next/image";
+import { Box } from '@mantine/core';
+import Image from 'next/image';
 
 type Props = {
   src: string;
@@ -12,13 +12,13 @@ type Props = {
 };
 
 export const BgImage = ({
-  alignItems = "center",
+  alignItems = 'center',
   children,
-  alt = "Background Image",
+  alt = 'Background Image',
   src,
-  height = "50vh",
-  justifyContent = "center",
-  width = "100%",
+  height = '50vh',
+  justifyContent = 'center',
+  width = '100%',
 }: Props) => {
   return (
     <Box
@@ -27,12 +27,12 @@ export const BgImage = ({
         height,
         justifyContent,
         width,
-        position: "relative",
-        display: "flex",
+        position: 'relative',
+        display: 'flex',
       }}
     >
-      <Image alt={alt} src={src} layout="fill" objectFit="cover" quality={80} />
-      {children && <Box sx={{ zIndex: 10 }}>{children}</Box>}
+      <Image alt={alt} src={src} layout='fill' objectFit='cover' quality={80} />
+      <Box sx={{ zIndex: 10 }}>{children}</Box>
     </Box>
   );
 };

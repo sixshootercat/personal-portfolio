@@ -1,18 +1,16 @@
-import { MainLayout } from "@/components/layout";
-import { About as AboutContent } from "@/containers/About";
-import { ReactElement, Suspense } from "react";
+import { MainLayout } from '@/components/layouts';
+import { About as AboutContent } from '@/containers/About';
+import { ReactElement } from 'react';
 
 const About = () => {
   return (
     <>
-      <Suspense fallback={<>loading...</>}>
-        <AboutContent />
-      </Suspense>
+      <AboutContent />
     </>
   );
 };
 
-About.getLayout = function getLayout(page: ReactElement) {
+About.getLayout = (page: ReactElement) => {
   return <MainLayout height={100}>{page}</MainLayout>;
 };
 
