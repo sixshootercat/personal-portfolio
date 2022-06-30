@@ -1749,6 +1749,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mantine/form@npm:^4.2.11":
+  version: 4.2.11
+  resolution: "@mantine/form@npm:4.2.11"
+  peerDependencies:
+    react: ">=16.8.0"
+  checksum: e766c89494fa5c07c08fb3b2654941ee56184a9e26bf4ee3ea06bf582e52e1983012cec932fe681255ed039d27517b12050b89582881123e731b9b43f7ba8046
+  languageName: node
+  linkType: hard
+
 "@mantine/hooks@npm:4.2.6":
   version: 4.2.6
   resolution: "@mantine/hooks@npm:4.2.6"
@@ -4983,6 +4992,7 @@ __metadata:
     "@fortawesome/free-solid-svg-icons": 6.1.1
     "@fortawesome/react-fontawesome": 0.1.18
     "@mantine/core": 4.2.6
+    "@mantine/form": ^4.2.11
     "@mantine/hooks": 4.2.6
     "@mantine/next": 4.2.6
     "@portabletext/react": 1.0.6
@@ -5004,6 +5014,7 @@ __metadata:
     suspend-react: ^0.0.8
     tailwindcss: 3.0.24
     typescript: 4.7.2
+    valtio: ^1.6.1
   languageName: unknown
   linkType: soft
 
@@ -12802,6 +12813,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"proxy-compare@npm:2.1.0":
+  version: 2.1.0
+  resolution: "proxy-compare@npm:2.1.0"
+  checksum: e431403abbb52468045635f434846c55b388c3ccf4012efe729e3fa846513b5d49e2488328582d5be792e7b9b0ba5f5a111887b3a2c4f9a273fc432ab79c7b63
+  languageName: node
+  linkType: hard
+
 "prr@npm:~1.0.1":
   version: 1.0.1
   resolution: "prr@npm:1.0.1"
@@ -15914,6 +15932,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"use-sync-external-store@npm:1.1.0":
+  version: 1.1.0
+  resolution: "use-sync-external-store@npm:1.1.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 8993a0b642f91d7fcdbb02b7b3ac984bd3af4769686f38291fe7fcfe73dfb73d6c64d20dfb7e5e7fbf5a6da8f5392d6f8e5b00c243a04975595946e82c02b883
+  languageName: node
+  linkType: hard
+
 "use@npm:^3.1.0":
   version: 3.1.1
   resolution: "use@npm:3.1.1"
@@ -16006,6 +16033,36 @@ __metadata:
     spdx-correct: ^3.0.0
     spdx-expression-parse: ^3.0.0
   checksum: 35703ac889d419cf2aceef63daeadbe4e77227c39ab6287eeb6c1b36a746b364f50ba22e88591f5d017bc54685d8137bc2d328d0a896e4d3fd22093c0f32a9ad
+  languageName: node
+  linkType: hard
+
+"valtio@npm:^1.6.1":
+  version: 1.6.1
+  resolution: "valtio@npm:1.6.1"
+  dependencies:
+    proxy-compare: 2.1.0
+    use-sync-external-store: 1.1.0
+  peerDependencies:
+    "@babel/helper-module-imports": ">=7.12"
+    "@babel/types": ">=7.13"
+    aslemammad-vite-plugin-macro: ">=1.0.0-alpha.1"
+    babel-plugin-macros: ">=3.0"
+    react: ">=16.8"
+    vite: ">=2.8.6"
+  peerDependenciesMeta:
+    "@babel/helper-module-imports":
+      optional: true
+    "@babel/types":
+      optional: true
+    aslemammad-vite-plugin-macro:
+      optional: true
+    babel-plugin-macros:
+      optional: true
+    react:
+      optional: true
+    vite:
+      optional: true
+  checksum: 7f707ad74a9897dafd8cc4453b85b8f9bb799ab85cbaa4c412ccb1ffddcd8df624716f5bd56f9a56b1c15a35cf9cb2742c9af4335db077e57ef85ae7366a3c93
   languageName: node
   linkType: hard
 

@@ -1,6 +1,6 @@
-import { MainLayout } from "@/components/layout";
-import { Contact as ContactContent } from "@/containers/Contact";
-import { ReactElement } from "react";
+import { MainLayout } from '@/components/layouts';
+import { Contact as ContactContent } from '@/containers/Contact';
+import { ReactElement } from 'react';
 
 const Contact = () => {
   return (
@@ -10,7 +10,7 @@ const Contact = () => {
   );
 };
 
-Contact.getLayout = function getLayout(page: ReactElement) {
+Contact.getLayout = (page: ReactElement) => {
   return <MainLayout height={100}>{page}</MainLayout>;
 };
 
