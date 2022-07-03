@@ -1,28 +1,26 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from 'react';
 
 export const useScrollingUp = () => {
   const [show, setShow] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const controlNavbar = () => {
-      if (window.scrollY > lastScrollY) {
-        // if scroll down hide the navbar
+      if (window.scrollY > lastScrollY.current) {
         setShow(false);
       } else {
-        // if scroll up show the navbar
         setShow(true);
       }
 
       // remember current page location to use in the next scroll move
-      setLastScrollY(window.scrollY);
+      lastScrollY.current = window.scrollY;
     };
 
-    if (typeof window !== "undefined") {
-      window.addEventListener("scroll", controlNavbar);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', controlNavbar);
 
       return () => {
-        window.removeEventListener("scroll", controlNavbar);
+        window.removeEventListener('scroll', controlNavbar);
       };
     }
   }, [lastScrollY]);

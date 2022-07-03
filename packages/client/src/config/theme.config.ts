@@ -1,21 +1,21 @@
-import { MantineThemeOverride } from "@mantine/core";
+import { MantineThemeOverride } from '@mantine/core';
 
 export const themeConfig = (
-  colorScheme: MantineThemeOverride["colorScheme"]
+  colorScheme: MantineThemeOverride['colorScheme'] = 'dark'
 ): MantineThemeOverride => ({
   colorScheme,
   colors: {
     dark: [
-      "#d5d7e0",
-      "#acaebf",
-      "#8c8fa3",
-      "#666980",
-      "#4d4f66",
-      "#34354a",
-      "#2b2c3d",
-      "#1d1e30",
-      "#0c0d21",
-      "#01010a",
+      '#d5d7e0',
+      '#acaebf',
+      '#8c8fa3',
+      '#666980',
+      '#4d4f66',
+      '#34354a',
+      '#2b2c3d',
+      '#1d1e30',
+      '#0c0d21',
+      '#01010a',
     ],
   },
   // px value
@@ -26,6 +26,6 @@ export const themeConfig = (
     lg: 1200,
     xl: 1440,
   },
-  fontFamily: "Verdana, sans-serif",
-  fontFamilyMonospace: "Monaco, Courier, monospace",
+  fontFamily: 'Verdana, sans-serif',
+  fontFamilyMonospace: 'Monaco, Courier, monospace',
 });

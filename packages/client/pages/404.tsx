@@ -27,11 +27,7 @@ const NotFound = () => {
 };
 
 NotFound.getLayout = (page: ReactElement) => {
-  return (
-    <MainLayout marginTop={0} bodyPadding={0}>
-      {page}
-    </MainLayout>
-  );
+  return <MainLayout marginTop={0}>{page}</MainLayout>;
 };
 
 export default NotFound;
