@@ -3,26 +3,27 @@ import { Footer, Header, MenuOverlay } from '@/components/navigation';
 import { AppShell, useMantineTheme, Box } from '@mantine/core';
 import { ScrollToTop } from '@/components/navigation';
 import { useIsClient } from '@/hooks';
-import { useScrollLock } from '@mantine/hooks';
+import { useMediaQuery, useScrollLock } from '@mantine/hooks';
 import { MockMenuOverlayElems } from '@/components/navigation/MenuOverlay/';
 import { MockHeaderElems } from '@/components/navigation/Header/';
 import { MockFooterElems } from '@/components/navigation/Footer/';
+import { MEDIA_QUERIES } from 'src/constants';
 
 type MainLayoutProps = {
   children: React.ReactNode;
   marginTop?: string | number;
-  bodyPadding?: number;
+  hasBodyPad?: boolean;
   height?: number;
 };
 
 export const MainLayout = ({
   children,
   marginTop = '90px',
-  bodyPadding = 10,
   height = 0,
+  hasBodyPad = true,
 }: MainLayoutProps) => {
   const theme = useMantineTheme();
-
+  const isDesktop = useMediaQuery(MEDIA_QUERIES.desktop);
   const [, setScrollLocked] = useScrollLock(false);
   const isClient = useIsClient();
   const [navMenuOpened, setNavMenuOpened] = useState(false);
@@ -40,7 +41,7 @@ export const MainLayout = ({
               : theme.colors.gray[0],
         },
       }}
-      padding={bodyPadding}
+      padding={0}
       header={
         <Header>
           <MockHeaderElems
@@ -72,6 +73,7 @@ export const MainLayout = ({
         sx={{
           marginTop,
           ...(height && { height: `${height}vh` }),
+          padding: isDesktop ? '20px 10%' : '20px',
         }}
       >
         <ScrollToTop />

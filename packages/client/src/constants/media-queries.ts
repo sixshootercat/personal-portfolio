@@ -1,4 +1,6 @@
+import { themeConfig } from '../config/theme.config';
+
 export const MEDIA_QUERIES = {
-  mobile: `(max-width: 441px)`,
-  desktop: `(min-width: 768px)`,
+  mobile: `(max-width: ${themeConfig().breakpoints?.xs}px)`,
+  desktop: `(min-width: ${themeConfig().breakpoints?.sm}px)`,
 };
