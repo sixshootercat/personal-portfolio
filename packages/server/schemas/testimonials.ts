@@ -6,22 +6,22 @@ export default {
     {
       name: 'name',
       title: 'Name',
-      type: 'testimonialsName',
+      type: 'string',
     },
     {
       name: 'company',
       title: 'Company',
-      type: 'testimonialsCompany',
+      type: 'string',
     },
     {
       name: 'image',
       title: 'Image',
-      type: 'testimonialsImage',
+      type: 'image',
     },
     {
       name: 'feedback',
       title: 'Feedback',
-      type: 'testimonialsFeedback',
+      type: 'string',
     },
   ],
 };
