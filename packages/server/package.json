@@ -9,7 +9,8 @@
   "scripts": {
     "dev": "sanity start",
     "test": "sanity check",
-    "build": "sanity build public -y"
+    "build": "sanity build public -y",
+    "install": "sanity install"
   },
   "keywords": [
     "sanity"
