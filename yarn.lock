@@ -2284,6 +2284,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sanity/cli@npm:^2.30.2":
+  version: 2.30.2
+  resolution: "@sanity/cli@npm:2.30.2"
+  bin:
+    sanity: bin/sanity
+  checksum: 4b79b8a59bb57da5a102a499f587c27e434dbba19310cf8dc5dfb3eac033e3808ba311b6034c7f6d1697eb36753786e0960b7a88eb895d55f5831e66b0a637ff
+  languageName: node
+  linkType: hard
+
 "@sanity/client@npm:^3.2.0, @sanity/client@npm:^3.3.0":
   version: 3.3.2
   resolution: "@sanity/client@npm:3.3.2"
@@ -14217,6 +14226,7 @@ __metadata:
   dependencies:
     "@babel/preset-env": 7.18.2
     "@sanity/base": 2.30.0
+    "@sanity/cli": ^2.30.2
     "@sanity/core": 2.30.0
     "@sanity/default-layout": 2.30.0
     "@sanity/default-login": 2.30.0

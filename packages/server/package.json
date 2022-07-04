@@ -8,7 +8,8 @@
   "license": "UNLICENSED",
   "scripts": {
     "dev": "sanity start",
-    "build": "sanity build"
+    "test": "sanity check",
+    "build": "sanity build public -y"
   },
   "keywords": [
     "sanity"
@@ -29,6 +30,7 @@
     "styled-components": "5.2.0"
   },
   "devDependencies": {
-    "@babel/preset-env": "7.18.2"
+    "@babel/preset-env": "7.18.2",
+    "@sanity/cli": "^2.30.2"
   }
 }
