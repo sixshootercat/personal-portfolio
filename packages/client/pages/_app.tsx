@@ -11,7 +11,7 @@ import { useHotkeys, useLocalStorage } from '@mantine/hooks';
 import { NextPage } from 'next';
 import { ReactElement, ReactNode } from 'react';
 import { AppProps } from 'next/app';
-import { themeConfig } from '@/config/theme.config';
+import { themeConfig } from '@/config/theme-config';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
 config.autoAddCss = false;

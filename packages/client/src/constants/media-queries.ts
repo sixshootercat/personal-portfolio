@@ -1,4 +1,4 @@
-import { themeConfig } from '../config/theme.config';
+import { themeConfig } from '../config/theme-config';
 
 export const MEDIA_QUERIES = {
   mobile: `(max-width: ${themeConfig().breakpoints?.xs}px)`,

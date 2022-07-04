@@ -1,9 +1,9 @@
-import React from "react";
-import { useRef } from "react";
-import Image from "next/image";
-import { useNextSanityImage } from "next-sanity-image";
-import { ImageProps as NextImageProps } from "next/image";
-import { client } from "@/sanity/sanity.client";
+import React from 'react';
+import { useRef } from 'react';
+import Image from 'next/image';
+import { useNextSanityImage } from 'next-sanity-image';
+import { ImageProps as NextImageProps } from 'next/image';
+import { client } from '@/sanity/sanity-client';
 
 type SanityImageObj = {
   _type: string;
@@ -17,18 +17,18 @@ type NextSanityImageProps = {
   image: SanityImageObj;
   quality?: number;
   priority?: false;
-  layout?: NextImageProps["layout"];
-  objectFit?: NextImageProps["objectFit"];
-  objectPosition?: NextImageProps["objectPosition"];
+  layout?: NextImageProps['layout'];
+  objectFit?: NextImageProps['objectFit'];
+  objectPosition?: NextImageProps['objectPosition'];
 };
 
 export const NextSanityImage = ({
   image,
   quality = 75,
   priority = false,
-  layout = "fill",
-  objectFit = "cover",
-  objectPosition = "center",
+  layout = 'fill',
+  objectFit = 'cover',
+  objectPosition = 'center',
 }: NextSanityImageProps) => {
   const hotspotValue = useRef<undefined | string>();
 
@@ -50,12 +50,12 @@ export const NextSanityImage = ({
       priority={priority}
       quality={quality}
       layout={layout}
-      alt={image.alt || "img"}
+      alt={image.alt || 'img'}
       objectFit={objectFit}
       objectPosition={hotspotValue?.current || objectPosition}
       {...sanityImage}
-      width={layout !== "fill" ? "100%" : undefined}
-      height={layout !== "fill" ? "100%" : undefined}
+      width={layout !== 'fill' ? '100%' : undefined}
+      height={layout !== 'fill' ? '100%' : undefined}
     />
   );
 };

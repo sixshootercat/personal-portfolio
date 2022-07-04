@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect } from 'react';
+import React, { ReactNode } from 'react';
 import { Header as MantineHeader } from '@mantine/core';
 import { useScrollingUp } from 'src/hooks';
 import { useMediaQuery } from '@mantine/hooks';
@@ -12,10 +12,6 @@ type HeaderProps = {
 export const Header = ({ children, animation = 'slide' }: HeaderProps) => {
   const show = useScrollingUp();
   const isDesktop = useMediaQuery(MEDIA_QUERIES.desktop);
-
-  useEffect(() => {
-    console.log('Header rendered');
-  });
 
   const animateSlide = () =>
     animation === 'slide' && show

@@ -1,6 +1,6 @@
 import { MainLayout } from '@/components/layouts';
 import { Experiences as ExperiencesContent } from '@/containers/Experiences';
-import { client } from '@/sanity/sanity.client';
+import { client } from '@/sanity/sanity-client';
 import { GetStaticProps } from 'next';
 import { groq } from 'next-sanity';
 import { ReactElement } from 'react';
