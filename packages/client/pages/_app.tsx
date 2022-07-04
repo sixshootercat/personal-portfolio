@@ -44,24 +44,26 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
   useHotkeys([['mod+J', () => toggleColorScheme()]]);
 
   return (
-    <ErrorBoundary>
-      <ColorSchemeProvider
-        colorScheme={colorScheme}
-        toggleColorScheme={toggleColorScheme}
+    <ColorSchemeProvider
+      colorScheme={colorScheme}
+      toggleColorScheme={toggleColorScheme}
+    >
+      <MantineProvider
+        theme={{ ...themeConfig(colorScheme) }}
+        withNormalizeCSS
+        withGlobalStyles
       >
-        <MantineProvider
-          theme={{ ...themeConfig(colorScheme) }}
-          withNormalizeCSS
-          withGlobalStyles
-        >
-          <NextNProgress
-            color={theme.colors.cyan[4]}
-            options={{ showSpinner: false }}
-          />
-          {getLayout(<Component {...pageProps} />)}
-        </MantineProvider>
-      </ColorSchemeProvider>
-    </ErrorBoundary>
+        <NextNProgress
+          color={theme.colors.cyan[4]}
+          options={{ showSpinner: false }}
+        />
+        {getLayout(
+          <ErrorBoundary>
+            <Component {...pageProps} />
+          </ErrorBoundary>
+        )}
+      </MantineProvider>
+    </ColorSchemeProvider>
   );
 };
 
