@@ -3,10 +3,6 @@
   "project": {
     "name": "personal-portfolio"
   },
-  "api": {
-    "projectId": "uxxoqaxi",
-    "dataset": "production"
-  },
   "plugins": [
     "@sanity/base",
     "@sanity/default-layout",
