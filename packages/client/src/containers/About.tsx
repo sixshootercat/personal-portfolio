@@ -1,5 +1,4 @@
 export const About = ({ data }: { data: any }) => {
-  console.log({ data });
   return (
     <div>
       <h1>About</h1>
