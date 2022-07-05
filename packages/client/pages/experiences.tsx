@@ -6,7 +6,7 @@ import { groq } from 'next-sanity';
 import { ReactElement } from 'react';
 
 const Experiences = ({ experiences }: { experiences: any }) => {
-  if (!experiences) {
+  if (!experiences.length) {
     return (
       <div>
         <h1>Experiences</h1>

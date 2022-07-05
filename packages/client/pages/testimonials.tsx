@@ -1,10 +1,12 @@
+import { MainLayout } from '@/components/layouts';
 import { Testimonials as TestimonialsContent } from '@/containers/Testimonials';
 import { client } from '@/sanity/sanity-client';
 import { GetStaticProps } from 'next';
 import { groq } from 'next-sanity';
+import { ReactElement } from 'react';
 
 const Testimonials = ({ testimonials }: { testimonials: any }) => {
-  if (!testimonials) {
+  if (!testimonials.length) {
     return (
       <div>
         <h1>Testimonials</h1>
@@ -25,6 +27,10 @@ export const getStaticProps: GetStaticProps = async () => {
       testimonials,
     },
   };
+};
+
+Testimonials.getLayout = (page: ReactElement) => {
+  return <MainLayout height={100}>{page}</MainLayout>;
 };
 
 export default Testimonials;
