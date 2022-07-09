@@ -1,7 +1,7 @@
-import { NavItem } from "@/components/navigation/Header";
-import { createStyles } from "@mantine/core";
-import Link from "next/link";
-import { MenuOverlayItem } from ".";
+import { createStyles } from '@mantine/core';
+import Link from 'next/link';
+import { MenuOverlayItem } from '.';
+import { NavItem } from '../../navigation.types';
 
 type MenuOverlayLinkItemProps = {
   item: NavItem;
@@ -25,7 +25,7 @@ export const MenuOverlayLinkItem = ({
 
 const useStyles = createStyles(() => ({
   navItemMobile: {
-    width: "100%",
-    textAlign: "center",
+    width: '100%',
+    textAlign: 'center',
   },
 }));
