@@ -10,7 +10,7 @@ import {
 } from '@mantine/core';
 import Link from 'next/link';
 import { ReactNode } from 'react';
-import { HEADER_ELEMS } from './Header.constants';
+import { NAV_ITEMS } from '../navigation.constants';
 
 const HeaderLogo = ({
   bgColor = 'transparent',
@@ -74,7 +74,7 @@ export const MockHeaderElems = ({
             }}
           >
             <ThemeIcon />
-            {HEADER_ELEMS.map((el) => (
+            {NAV_ITEMS.map((el) => (
               <Box
                 sx={{ margin: '0 1rem', color: dark ? 'white' : 'black' }}
                 key={el.id}

@@ -20,13 +20,18 @@ export const MainLayout = ({
   children,
   marginTop = '90px',
   height = 0,
-  hasBodyPad = true,
+  hasBodyPad = true, // TODO: whats this for again?
 }: MainLayoutProps) => {
   const theme = useMantineTheme();
   const isDesktop = useMediaQuery(MEDIA_QUERIES.desktop);
   const [, setScrollLocked] = useScrollLock(false);
   const isClient = useIsClient();
   const [navMenuOpened, setNavMenuOpened] = useState(false);
+
+  const toggleMenuOverlay = () => {
+    setScrollLocked((p) => !p);
+    setNavMenuOpened((o) => !o);
+  };
 
   // NOTE: avoid server and client rendering result mismatch
   if (!isClient) return null;
@@ -44,23 +49,12 @@ export const MainLayout = ({
       padding={0}
       header={
         <Header>
-          <MockHeaderElems
-            isOpen={navMenuOpened}
-            onClick={() => {
-              setScrollLocked((p) => !p);
-              setNavMenuOpened((o) => !o);
-            }}
-          />
+          <MockHeaderElems isOpen={navMenuOpened} onClick={toggleMenuOverlay} />
         </Header>
       }
       navbar={
         <MenuOverlay isOpen={navMenuOpened}>
-          <MockMenuOverlayElems
-            onItemClick={() => {
-              setScrollLocked((p) => !p);
-              setNavMenuOpened((o) => !o);
-            }}
-          />
+          <MockMenuOverlayElems onItemClick={toggleMenuOverlay} />
         </MenuOverlay>
       }
       footer={
@@ -72,7 +66,7 @@ export const MainLayout = ({
       <Box
         sx={{
           marginTop,
-          ...(height && { height: `${height}vh` }),
+          ...(height && { height: `${height}%` }),
           padding: isDesktop ? '20px 10%' : '20px',
         }}
       >

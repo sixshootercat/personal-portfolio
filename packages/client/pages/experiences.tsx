@@ -33,7 +33,6 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-//TODO: remove height prop when page has content; same on other pages w/o content
 Experiences.getLayout = (page: ReactElement) => {
   return <MainLayout height={100}>{page}</MainLayout>;
 };
