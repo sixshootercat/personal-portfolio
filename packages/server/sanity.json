@@ -19,5 +19,24 @@
       "name": "part:@sanity/base/schema",
       "path": "./schemas/schema.ts"
     }
+  ],
+  "__experimental_spaces": [
+    {
+      "name": "production",
+      "title": "Prod",
+      "api": {
+        "projectId": "uxxoqaxi",
+        "dataset": "production"
+      }
+    },
+    {
+      "name": "dev",
+      "title": "Dev",
+      "default": true,
+      "api": {
+        "projectId": "uxxoqaxi",
+        "dataset": "dev"
+      }
+    }
   ]
 }
