@@ -1,4 +1,3 @@
-import { HomeIcon } from '@/components/icons';
 import { Box, Divider, Group, Text } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import Link from 'next/link';
@@ -6,7 +5,15 @@ import React, { ReactNode } from 'react';
 import { MEDIA_QUERIES } from 'src/constants';
 import { NAV_ITEMS } from '../navigation.constants';
 
-const FooterLogo = ({ el = <HomeIcon /> }: { el?: ReactNode }) => {
+const FooterLogo = ({
+  el = (
+    <Text weight={600} size='xl'>
+      Kevin Ruhl
+    </Text>
+  ),
+}: {
+  el?: ReactNode;
+}) => {
   return <Link href='/'>{el}</Link>;
 };
 
@@ -20,7 +27,6 @@ export const MockFooterElems = () => {
           [theme.fn.largerThan('xs')]: {
             flexDirection: 'row',
             justifyContent: 'flex-start',
-            marginLeft: '2rem',
           },
           [theme.fn.smallerThan('xs')]: {
             flexDirection: 'column',
@@ -30,7 +36,6 @@ export const MockFooterElems = () => {
       >
         <Box
           sx={{
-            width: 100,
             cursor: 'pointer',
             display: 'flex',
             justifyContent: 'center',

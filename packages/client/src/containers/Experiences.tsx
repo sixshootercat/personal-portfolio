@@ -1,6 +1,16 @@
+import { WIP } from '@/components/misc';
 import React from 'react';
 
 export const Experiences = ({ data }: { data: any }) => {
+  if (!data.length) {
+    return (
+      <div>
+        <h1>Experiences</h1>
+        <WIP />
+      </div>
+    );
+  }
+
   return (
     <div>
       {data?.map((el: any) => {

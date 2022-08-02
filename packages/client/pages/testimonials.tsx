@@ -6,15 +6,6 @@ import { groq } from 'next-sanity';
 import { ReactElement } from 'react';
 
 const Testimonials = ({ testimonials }: { testimonials: any }) => {
-  if (!testimonials.length) {
-    return (
-      <div>
-        <h1>Testimonials</h1>
-        <p>This is the testimonials page</p>
-      </div>
-    );
-  }
-
   return <TestimonialsContent data={testimonials} />;
 };
 

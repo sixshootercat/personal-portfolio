@@ -1,11 +1,10 @@
 import { ThemeIcon } from '@/components/icons';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   Box,
   Burger,
   createStyles,
   CSSObject,
+  Text,
   useMantineTheme,
 } from '@mantine/core';
 import Link from 'next/link';
@@ -14,8 +13,11 @@ import { NAV_ITEMS } from '../navigation.constants';
 
 const HeaderLogo = ({
   bgColor = 'transparent',
-  el = <FontAwesomeIcon size='lg' icon={faHome} />,
-  size = 100,
+  el = (
+    <Text weight={600} size='xl'>
+      Kevin Ruhl
+    </Text>
+  ),
 }: {
   bgColor?: string;
   el?: ReactNode;
@@ -25,7 +27,6 @@ const HeaderLogo = ({
     <Box
       sx={{
         height: '100%',
-        width: `${size}px`,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -76,18 +77,16 @@ export const MockHeaderElems = ({
             <ThemeIcon />
             {NAV_ITEMS.map((el) => (
               <Box
-                sx={{ margin: '0 1rem', color: dark ? 'white' : 'black' }}
                 key={el.id}
+                sx={(theme) => ({
+                  margin: '0 1rem',
+                  color: dark ? 'white' : 'black',
+                  ':hover': {
+                    color: theme.colors.cyan[4],
+                  },
+                })}
               >
-                <Box
-                  sx={(theme) => ({
-                    ':hover': {
-                      color: theme.colors.cyan[4],
-                    },
-                  })}
-                >
-                  <Link href={el.link}>{el.name}</Link>
-                </Box>
+                <Link href={el.link}>{el.name}</Link>
               </Box>
             ))}
           </Box>

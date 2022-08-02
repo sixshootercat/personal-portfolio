@@ -27,7 +27,7 @@ export const Header = ({ children, animation = 'slide' }: HeaderProps) => {
           marginLeft: 'auto',
           marginRight: '10px',
         },
-        padding: isDesktop ? '0 5%' : '0',
+        padding: isDesktop ? '0 10%' : '0',
       }}
       height='90px'
     >
