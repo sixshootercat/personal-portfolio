@@ -16,7 +16,7 @@ export const Footer = ({ children }: FooterProps) => {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        padding: isDesktop ? '10px 10%' : '10px',
+        padding: '15px 5%',
       }}
       height='auto'
     >

@@ -1,14 +1,9 @@
 import { ThemeIcon } from '@/components/icons';
-import {
-  Box,
-  Burger,
-  createStyles,
-  CSSObject,
-  Text,
-  useMantineTheme,
-} from '@mantine/core';
+import { Box, Burger, Text, useMantineTheme } from '@mantine/core';
+import { useMediaQuery } from '@mantine/hooks';
 import Link from 'next/link';
 import { ReactNode } from 'react';
+import { MEDIA_QUERIES } from 'src/constants';
 import { NAV_ITEMS } from '../navigation.constants';
 
 const HeaderLogo = ({
@@ -21,7 +16,6 @@ const HeaderLogo = ({
 }: {
   bgColor?: string;
   el?: ReactNode;
-  size?: number;
 }) => {
   return (
     <Box
@@ -46,17 +40,19 @@ export const MockHeaderElems = ({
   onClick: () => void;
   isOpen: boolean;
 }) => {
-  const { classes } = useStyles();
   const theme = useMantineTheme();
   const dark = theme.colorScheme === 'dark';
+  const isDesktop = useMediaQuery(MEDIA_QUERIES.desktop);
 
   return (
-    <div className='h-full'>
-      <div className={classes.headerMobile}>
-        <HeaderLogo />
-        <Burger opened={isOpen} onClick={onClick} size={30} />
-      </div>
-      <div className={classes.headerDesktop}>
+    <div className='h-full flex items-center'>
+      {!isDesktop && (
+        <>
+          <HeaderLogo />
+          <Burger opened={isOpen} onClick={onClick} size={30} />
+        </>
+      )}
+      {isDesktop && (
         <Box
           sx={{
             display: 'flex',
@@ -91,29 +87,7 @@ export const MockHeaderElems = ({
             ))}
           </Box>
         </Box>
-      </div>
+      )}
     </div>
   );
 };
-
-const headerStyles: CSSObject = {
-  display: 'flex',
-  alignItems: 'center',
-  height: '100%',
-};
-
-const useStyles = createStyles((theme) => ({
-  headerMobile: {
-    [theme.fn.largerThan('sm')]: {
-      display: 'none',
-    },
-    ...headerStyles,
-  },
-
-  headerDesktop: {
-    [theme.fn.smallerThan('sm')]: {
-      display: 'none',
-    },
-    ...headerStyles,
-  },
-}));

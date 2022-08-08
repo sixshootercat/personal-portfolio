@@ -67,7 +67,7 @@ export const MainLayout = ({
         sx={{
           marginTop,
           ...(height && { height: `${height}%` }),
-          padding: isDesktop ? '20px 10%' : '20px',
+          padding: '15px 5%',
         }}
       >
         <ScrollToTop />
