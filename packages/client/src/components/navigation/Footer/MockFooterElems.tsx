@@ -3,30 +3,42 @@ import { useMediaQuery } from '@mantine/hooks';
 import Link from 'next/link';
 import React, { ReactNode } from 'react';
 import { MEDIA_QUERIES } from 'src/constants';
-import { NAV_ITEMS } from '../navigation.constants';
+import { FOOTER_NAV_ITEMS } from '../navigation.constants';
 
 const FooterLogo = ({
-  el = (
+  children = (
     <Text weight={600} size='xl'>
       Kevin Ruhl
     </Text>
   ),
 }: {
-  el?: ReactNode;
+  children?: ReactNode;
 }) => {
-  return <Link href='/'>{el}</Link>;
+  return (
+    <div className='my-auto'>
+      <Link href='/'>{children}</Link>
+    </div>
+  );
 };
 
 export const MockFooterElems = () => {
   const isMobile = useMediaQuery(MEDIA_QUERIES.mobile);
 
+  const aboutCol = FOOTER_NAV_ITEMS.filter(
+    (item) => item.column === 'about me'
+  );
+
+  const portfolioCol = FOOTER_NAV_ITEMS.filter(
+    (item) => item.column === 'portfolio'
+  );
+
   return (
-    <div>
+    <>
       <Group
         sx={(theme) => ({
           [theme.fn.largerThan('xs')]: {
             flexDirection: 'row',
-            justifyContent: 'flex-start',
+            alignItems: 'flex-start',
           },
           [theme.fn.smallerThan('xs')]: {
             flexDirection: 'column',
@@ -44,7 +56,27 @@ export const MockFooterElems = () => {
           <FooterLogo />
         </Box>
         <Group direction='column' sx={{ width: 100 }}>
-          {NAV_ITEMS.map((el) => (
+          <Text size='lg' weight={600}>
+            About Me
+          </Text>
+          {aboutCol.map((el) => (
+            <Text
+              key={el.id}
+              sx={(theme) => ({
+                ':hover': {
+                  color: theme.colors.cyan[4],
+                },
+              })}
+            >
+              <Link href={el.link}>{el.name}</Link>
+            </Text>
+          ))}
+        </Group>
+        <Group direction='column' sx={{ width: 100 }}>
+          <Text size='lg' weight={600}>
+            Portoflio
+          </Text>
+          {portfolioCol.map((el) => (
             <Text
               key={el.id}
               sx={(theme) => ({
@@ -60,9 +92,9 @@ export const MockFooterElems = () => {
         {isMobile && <Divider size='xs' sx={{ width: '50%' }} />}
       </Group>
       <div className='mt-16'>
-        <span>All rights reserved </span>
+        <span className=''>All rights reserved </span>
         <span>© Kevin Ruhl 2022</span>
       </div>
-    </div>
+    </>
   );
 };
