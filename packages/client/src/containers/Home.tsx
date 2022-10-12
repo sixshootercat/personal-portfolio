@@ -1,5 +1,3 @@
-import { WIP } from '@/components/misc';
-import { Grid } from '@mantine/core';
 import Image from 'next/image';
 import React from 'react';
 

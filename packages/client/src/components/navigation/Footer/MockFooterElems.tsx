@@ -39,6 +39,7 @@ export const MockFooterElems = () => {
           [theme.fn.largerThan('xs')]: {
             flexDirection: 'row',
             alignItems: 'flex-start',
+            justifyContent: 'space-around',
           },
           [theme.fn.smallerThan('xs')]: {
             flexDirection: 'column',
@@ -50,44 +51,51 @@ export const MockFooterElems = () => {
           sx={{
             cursor: 'pointer',
             display: 'flex',
-            justifyContent: 'center',
           }}
         >
           <FooterLogo />
         </Box>
-        <Group direction='column' sx={{ width: 100 }}>
-          <Text size='lg' weight={600}>
-            About Me
-          </Text>
-          {aboutCol.map((el) => (
-            <Text
-              key={el.id}
-              sx={(theme) => ({
-                ':hover': {
-                  color: theme.colors.cyan[4],
-                },
-              })}
-            >
-              <Link href={el.link}>{el.name}</Link>
+        <Group
+          direction='row'
+          sx={{
+            alignItems: 'flex-start',
+            gap: 100,
+          }}
+        >
+          <Group direction='column'>
+            <Text size='lg' weight={600}>
+              About Me
             </Text>
-          ))}
-        </Group>
-        <Group direction='column' sx={{ width: 100 }}>
-          <Text size='lg' weight={600}>
-            Portoflio
-          </Text>
-          {portfolioCol.map((el) => (
-            <Text
-              key={el.id}
-              sx={(theme) => ({
-                ':hover': {
-                  color: theme.colors.cyan[4],
-                },
-              })}
-            >
-              <Link href={el.link}>{el.name}</Link>
+            {aboutCol.map((el) => (
+              <Text
+                key={el.id}
+                sx={(theme) => ({
+                  ':hover': {
+                    color: theme.colors.cyan[4],
+                  },
+                })}
+              >
+                <Link href={el.link}>{el.name}</Link>
+              </Text>
+            ))}
+          </Group>
+          <Group direction='column'>
+            <Text size='lg' weight={600}>
+              Portoflio
             </Text>
-          ))}
+            {portfolioCol.map((el) => (
+              <Text
+                key={el.id}
+                sx={(theme) => ({
+                  ':hover': {
+                    color: theme.colors.cyan[4],
+                  },
+                })}
+              >
+                <Link href={el.link}>{el.name}</Link>
+              </Text>
+            ))}
+          </Group>
         </Group>
         {isMobile && <Divider size='xs' sx={{ width: '50%' }} />}
       </Group>

@@ -20,7 +20,6 @@ export const MainLayout = ({
   children,
   marginTop = '90px',
   height = 0,
-  hasBodyPad = true, // TODO: whats this for again?
 }: MainLayoutProps) => {
   const theme = useMantineTheme();
   const isDesktop = useMediaQuery(MEDIA_QUERIES.desktop);
