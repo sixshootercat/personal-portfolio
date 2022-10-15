@@ -5,14 +5,16 @@ export const Home = () => {
   return (
     <div className='flex items-center justify-center flex-col mt-10 mb-56'>
       <h1 className='mb-10'>Bio</h1>
-      <div className='mb-10'>
+      <div className='mb-10 rounded-full overflow-hidden'>
         <Image
           src='/images/profile-kevin.jpg'
           alt='man with sunglasses'
-          width={200}
+          width='200px'
           className='rounded-full'
-          height={200}
+          height='200px'
           objectFit='cover'
+          placeholder='blur'
+          blurDataURL='/images/profile-kevin.jpg'
         />
       </div>
 
@@ -20,14 +22,13 @@ export const Home = () => {
         I&apos;ve been designing and writing software since 2016. Currently
         working with React and Typescript on the frontend. Doing backend
         development with Node and Go. I&apos;m a pragmatic thinker and
-        technology agnostic. When I&apos;m not programming and solving problems,
-        You can find me delving into philosophy podcasts, doing physical
-        training, and traveling.
+        technology agnostic. When I&apos;m not programming, some other
+        activities I enjoy doing in my free time are listening to philosophy
+        podcasts, doing physical training, and traveling.
       </p>
       <br />
       <p className='w-2/3'>
-        Contact me to help you build slick and delightful UXs for your business
-        needs.
+        Contact me to help you build slick UIs for your business needs.
       </p>
     </div>
   );
