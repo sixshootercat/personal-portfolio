@@ -1,3 +1,3 @@
-## Personal website
+## Client
 
-Built using NextJS, Sanity Studio, and Tailwind
+Built using NextJS and Tailwind
