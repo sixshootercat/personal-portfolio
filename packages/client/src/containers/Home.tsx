@@ -3,7 +3,7 @@ import React from 'react';
 
 export const Home = () => {
   return (
-    <div className='flex items-center justify-center flex-col mt-10 mb-56'>
+    <div className='mb-24 sm:mb-56 flex items-center justify-center flex-col mt-10'>
       <h1 className='mb-10'>Bio</h1>
       <div className='mb-10 rounded-full overflow-hidden'>
         <Image
@@ -17,19 +17,18 @@ export const Home = () => {
           blurDataURL='/images/profile-kevin.jpg'
         />
       </div>
-
-      <p className='w-2/3'>
-        I&apos;ve been designing and writing software since 2016. Currently
-        working with React and Typescript on the frontend. Doing backend
-        development with Node and Go. I&apos;m a pragmatic thinker and
-        technology agnostic. When I&apos;m not programming, some other
-        activities I enjoy doing in my free time are listening to philosophy
-        podcasts, doing physical training, and traveling.
-      </p>
-      <br />
-      <p className='w-2/3'>
-        Contact me to help you build slick UIs for your business needs.
-      </p>
+      <div className='text-justify sm:w-2/3 lg:text-left'>
+        <p>
+          I&apos;ve been designing and writing software since 2016. Currently
+          working with React and Typescript on the frontend. Doing backend
+          development with Node and Go. I&apos;m a pragmatic thinker and
+          technology agnostic. When I&apos;m not programming, some other
+          activities I enjoy doing in my free time are listening to philosophy
+          podcasts, doing physical training, and traveling.
+        </p>
+        <br />
+        <p>Contact me to help you build slick UIs for your business needs.</p>
+      </div>
     </div>
   );
 };
