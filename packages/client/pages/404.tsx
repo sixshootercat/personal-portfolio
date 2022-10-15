@@ -9,10 +9,10 @@ const NotFound = () => {
     <BgImage
       src='/images/foggy-mountains.jpg'
       alt='foggy mountains'
-      height='100vh'
+      className='items-center h-screen justify-center w-full flex relative'
     >
       <Group direction='column' align='center'>
-        <Text color='black' sx={{ fontSize: '48px' }}>
+        <Text color='black' className='text-5xl h-'>
           404
         </Text>
         <Text color='black' size='lg'>
