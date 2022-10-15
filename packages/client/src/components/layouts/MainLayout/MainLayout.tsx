@@ -67,7 +67,6 @@ export const MainLayout = ({
           padding: '15px 5%',
         }}
       >
-        <ScrollToTop />
         {children}
       </Box>
     </AppShell>
