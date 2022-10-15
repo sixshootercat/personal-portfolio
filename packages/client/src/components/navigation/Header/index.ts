@@ -1,2 +1,2 @@
-export { Header } from "./Header";
-export { MockHeaderElems } from "./MockHeaderElems";
+export { Header } from './Header';
+export { HeaderItems } from './HeaderItems';

@@ -21,7 +21,7 @@ const FooterLogo = ({
   );
 };
 
-export const MockFooterElems = () => {
+export const FooterItems = () => {
   const isMobile = useMediaQuery(MEDIA_QUERIES.mobile);
 
   const aboutCol = FOOTER_NAV_ITEMS.filter(
@@ -35,46 +35,19 @@ export const MockFooterElems = () => {
   return (
     <>
       <Group
-        sx={(theme) => ({
-          [theme.fn.largerThan('xs')]: {
-            flexDirection: 'row',
-            alignItems: 'flex-start',
-            justifyContent: 'space-around',
-          },
-          [theme.fn.smallerThan('xs')]: {
-            flexDirection: 'column',
-          },
-        })}
+        className='flex-col sm:flex-row sm:items-start sm:justify-between'
         spacing={40}
       >
-        <Box
-          sx={{
-            cursor: 'pointer',
-            display: 'flex',
-          }}
-        >
+        <Box className='cursor-pointer flex'>
           <FooterLogo />
         </Box>
-        <Group
-          direction='row'
-          sx={{
-            alignItems: 'flex-start',
-            gap: 100,
-          }}
-        >
+        <Group className='items-start gap-24'>
           <Group direction='column'>
             <Text size='lg' weight={600}>
               About Me
             </Text>
             {aboutCol.map((el) => (
-              <Text
-                key={el.id}
-                sx={(theme) => ({
-                  ':hover': {
-                    color: theme.colors.cyan[4],
-                  },
-                })}
-              >
+              <Text key={el.id} className='hover:text-cyan-400'>
                 <Link href={el.link}>{el.name}</Link>
               </Text>
             ))}
@@ -84,14 +57,7 @@ export const MockFooterElems = () => {
               Portoflio
             </Text>
             {portfolioCol.map((el) => (
-              <Text
-                key={el.id}
-                sx={(theme) => ({
-                  ':hover': {
-                    color: theme.colors.cyan[4],
-                  },
-                })}
-              >
+              <Text key={el.id} className='hover:text-cyan-400'>
                 <Link href={el.link}>{el.name}</Link>
               </Text>
             ))}

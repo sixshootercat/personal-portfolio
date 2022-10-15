@@ -5,8 +5,8 @@ import { ScrollToTop } from '@/components/navigation';
 import { useIsClient } from '@/hooks';
 import { useScrollLock } from '@mantine/hooks';
 import { MockMenuOverlayElems } from '@/components/navigation/MenuOverlay/';
-import { MockHeaderElems } from '@/components/navigation/Header/';
-import { MockFooterElems } from '@/components/navigation/Footer/';
+import { HeaderItems } from '@/components/navigation/Header/';
+import { FooterItems } from '@/components/navigation/Footer/';
 
 type MainLayoutProps = {
   children: React.ReactNode;
@@ -46,7 +46,7 @@ export const MainLayout = ({
       padding={0}
       header={
         <Header>
-          <MockHeaderElems isOpen={navMenuOpened} onClick={toggleMenuOverlay} />
+          <HeaderItems isOpen={navMenuOpened} onClick={toggleMenuOverlay} />
         </Header>
       }
       navbar={
@@ -56,7 +56,7 @@ export const MainLayout = ({
       }
       footer={
         <Footer>
-          <MockFooterElems />
+          <FooterItems />
         </Footer>
       }
     >

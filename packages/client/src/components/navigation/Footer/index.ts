@@ -1,2 +1,2 @@
-export { Footer } from "./Footer";
-export { MockFooterElems } from "./MockFooterElems";
+export { Footer } from './Footer';
+export { FooterItems } from './FooterItems';
