@@ -14,7 +14,7 @@
     "@fortawesome/free-solid-svg-icons": "6.1.1",
     "@fortawesome/react-fontawesome": "0.1.18",
     "@mantine/core": "4.2.6",
-    "@mantine/form": "^4.2.11",
+    "@mantine/form": "4.2.11",
     "@mantine/hooks": "4.2.6",
     "@mantine/next": "4.2.6",
     "@portabletext/react": "1.0.6",
@@ -23,11 +23,11 @@
     "next": "12.1.6",
     "next-sanity": "0.5.2",
     "next-sanity-image": "3.2.1",
-    "nextjs-progressbar": "^0.0.14",
+    "nextjs-progressbar": "0.0.14",
     "react": "18.1.0",
     "react-dom": "18.1.0",
-    "suspend-react": "^0.0.8",
-    "valtio": "^1.6.1"
+    "suspend-react": "0.0.8",
+    "valtio": "1.6.1"
   },
   "devDependencies": {
     "@babel/helper-module-imports": "7.16.7",

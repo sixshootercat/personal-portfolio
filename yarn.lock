@@ -1749,7 +1749,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/form@npm:^4.2.11":
+"@mantine/form@npm:4.2.11":
   version: 4.2.11
   resolution: "@mantine/form@npm:4.2.11"
   peerDependencies:
@@ -5001,7 +5001,7 @@ __metadata:
     "@fortawesome/free-solid-svg-icons": 6.1.1
     "@fortawesome/react-fontawesome": 0.1.18
     "@mantine/core": 4.2.6
-    "@mantine/form": ^4.2.11
+    "@mantine/form": 4.2.11
     "@mantine/hooks": 4.2.6
     "@mantine/next": 4.2.6
     "@portabletext/react": 1.0.6
@@ -5016,14 +5016,14 @@ __metadata:
     next: 12.1.6
     next-sanity: 0.5.2
     next-sanity-image: 3.2.1
-    nextjs-progressbar: ^0.0.14
+    nextjs-progressbar: 0.0.14
     postcss: 8.4.14
     react: 18.1.0
     react-dom: 18.1.0
-    suspend-react: ^0.0.8
+    suspend-react: 0.0.8
     tailwindcss: 3.0.24
     typescript: 4.7.2
-    valtio: ^1.6.1
+    valtio: 1.6.1
   languageName: unknown
   linkType: soft
 
@@ -10829,7 +10829,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nextjs-progressbar@npm:^0.0.14":
+"nextjs-progressbar@npm:0.0.14":
   version: 0.0.14
   resolution: "nextjs-progressbar@npm:0.0.14"
   dependencies:
@@ -15059,7 +15059,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"suspend-react@npm:^0.0.8":
+"suspend-react@npm:0.0.8":
   version: 0.0.8
   resolution: "suspend-react@npm:0.0.8"
   peerDependencies:
@@ -16047,7 +16047,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"valtio@npm:^1.6.1":
+"valtio@npm:1.6.1":
   version: 1.6.1
   resolution: "valtio@npm:1.6.1"
   dependencies:
