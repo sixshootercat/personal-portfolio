@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 /**
- * hook to check if the current page is being client side rendered
+ * checks if we are in the browser or not
  */
 export const useIsClient = () => {
   const [isClient, setClient] = useState(false);
