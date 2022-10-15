@@ -1,2 +1,2 @@
-export { MenuOverlay } from "./MenuOverlay";
-export { MockMenuOverlayElems } from "./MockMenuOverlayElems";
+export { MenuOverlay } from './MenuOverlay';
+export { MenuOverlayItems } from './MenuOverlayItems';

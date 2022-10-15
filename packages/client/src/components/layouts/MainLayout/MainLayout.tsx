@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { Footer, Header, MenuOverlay } from '@/components/navigation';
 import { AppShell, useMantineTheme, Box } from '@mantine/core';
-import { ScrollToTop } from '@/components/navigation';
 import { useIsClient } from '@/hooks';
 import { useScrollLock } from '@mantine/hooks';
-import { MockMenuOverlayElems } from '@/components/navigation/MenuOverlay/';
-import { HeaderItems } from '@/components/navigation/Header/';
-import { FooterItems } from '@/components/navigation/Footer/';
+import { MenuOverlayItems } from '@/components/navigation/MenuOverlay';
+import { HeaderItems } from '@/components/navigation/Header';
+import { FooterItems } from '@/components/navigation/Footer';
 
 type MainLayoutProps = {
   children: React.ReactNode;
@@ -51,7 +50,7 @@ export const MainLayout = ({
       }
       navbar={
         <MenuOverlay isOpen={navMenuOpened}>
-          <MockMenuOverlayElems onItemClick={toggleMenuOverlay} />
+          <MenuOverlayItems onItemClick={toggleMenuOverlay} />
         </MenuOverlay>
       }
       footer={
