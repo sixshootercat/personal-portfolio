@@ -3,11 +3,10 @@ import { Footer, Header, MenuOverlay } from '@/components/navigation';
 import { AppShell, useMantineTheme, Box } from '@mantine/core';
 import { ScrollToTop } from '@/components/navigation';
 import { useIsClient } from '@/hooks';
-import { useMediaQuery, useScrollLock } from '@mantine/hooks';
+import { useScrollLock } from '@mantine/hooks';
 import { MockMenuOverlayElems } from '@/components/navigation/MenuOverlay/';
 import { MockHeaderElems } from '@/components/navigation/Header/';
 import { MockFooterElems } from '@/components/navigation/Footer/';
-import { MEDIA_QUERIES } from 'src/constants';
 
 type MainLayoutProps = {
   children: React.ReactNode;
@@ -22,7 +21,6 @@ export const MainLayout = ({
   height = 0,
 }: MainLayoutProps) => {
   const theme = useMantineTheme();
-  const isDesktop = useMediaQuery(MEDIA_QUERIES.desktop);
   const [, setScrollLocked] = useScrollLock(false);
   const isClient = useIsClient();
   const [navMenuOpened, setNavMenuOpened] = useState(false);
