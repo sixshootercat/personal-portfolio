@@ -1,6 +1,6 @@
 export default {
-  name: 'about',
-  title: 'About',
+  name: 'bio',
+  title: 'Bio',
   type: 'document',
   fields: [
     {
@@ -11,7 +11,7 @@ export default {
     {
       name: 'description',
       title: 'Description',
-      type: 'string',
+      type: 'text',
     },
     {
       name: 'imgUrl',

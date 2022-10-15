@@ -1,14 +1,14 @@
 import { MainLayout } from '@/components/layouts';
-import { Experiences as ExperiencesContent } from '@/containers/Experiences';
+import { Experience as ExperienceContent } from '@/containers/Experience';
 import { client } from '@/sanity/sanity-client';
 import { GetStaticProps } from 'next';
 import { groq } from 'next-sanity';
 import { ReactElement } from 'react';
 
-const Experiences = ({ experiences }: { experiences: any }) => {
+const Experience = ({ experiences }: { experiences: any }) => {
   return (
     <div>
-      <ExperiencesContent data={experiences} />
+      <ExperienceContent data={experiences} />
     </div>
   );
 };
@@ -24,8 +24,8 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-Experiences.getLayout = (page: ReactElement) => {
+Experience.getLayout = (page: ReactElement) => {
   return <MainLayout height={100}>{page}</MainLayout>;
 };
 
-export default Experiences;
+export default Experience;

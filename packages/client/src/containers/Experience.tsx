@@ -1,7 +1,7 @@
 import { WIP } from '@/components/misc';
 import React from 'react';
 
-export const Experiences = ({ data }: { data: any }) => {
+export const Experience = ({ data }: { data: any }) => {
   if (!data.length) {
     return (
       <div>
