@@ -44,7 +44,7 @@ export const FooterItems = () => {
         <Group className='items-start gap-24'>
           <Group direction='column'>
             <Text size='lg' weight={600}>
-              About Me
+              About
             </Text>
             {aboutCol.map((el) => (
               <Text key={el.id} className='hover:text-cyan-400'>
