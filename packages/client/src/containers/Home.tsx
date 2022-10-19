@@ -17,7 +17,7 @@ export const Home = () => {
           blurDataURL='/images/profile-kevin.jpg'
         />
       </div>
-      <div className='text-justify sm:w-2/3 lg:text-left'>
+      <div className='sm:w-2/3'>
         <p>
           I&apos;ve been designing and writing software since 2016. Currently
           working with React and Typescript on the frontend. Doing backend
@@ -28,6 +28,13 @@ export const Home = () => {
         </p>
         <br />
         <p>Contact me to help you build slick UIs for your business needs.</p>
+        <br />
+        <p>
+          email:{' '}
+          <a className='text-cyan-400' href='mailto:kevin.ruhl92@gmail.com'>
+            kevin.ruhl92@gmail.com
+          </a>
+        </p>
       </div>
     </div>
   );
