@@ -31,7 +31,10 @@ export const Home = () => {
         <br />
         <p>
           email:{' '}
-          <a className='text-cyan-400' href='mailto:kevin.ruhl92@gmail.com'>
+          <a
+            className='hover:text-cyan-400'
+            href='mailto:kevin.ruhl92@gmail.com'
+          >
             kevin.ruhl92@gmail.com
           </a>
         </p>
