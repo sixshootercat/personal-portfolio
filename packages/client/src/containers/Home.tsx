@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import React from 'react';
+import { AiFillLinkedin } from 'react-icons/ai';
+import { MdEmail } from 'react-icons/md';
 
 export const Home = () => {
   return (
@@ -29,15 +30,24 @@ export const Home = () => {
         <br />
         <p>Contact me to help you build slick UIs for your business needs.</p>
         <br />
-        <p>
-          email:{' '}
+        <div className='mb-3'>
+          <MdEmail size={30} className='inline' />{' '}
           <a
             className='hover:text-cyan-400'
             href='mailto:kevin.ruhl92@gmail.com'
           >
             kevin.ruhl92@gmail.com
           </a>
-        </p>
+        </div>
+        <div>
+          <AiFillLinkedin size={30} className='inline hover:text-cyan-400' />{' '}
+          <a
+            className='hover:text-cyan-400'
+            href='https://www.linkedin.com/in/kevin-ruhl-b19b80166/'
+          >
+            https://www.linkedin.com/in/kevin-ruhl-b19b80166/
+          </a>
+        </div>
       </div>
     </div>
   );

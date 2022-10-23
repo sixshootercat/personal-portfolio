@@ -5020,6 +5020,7 @@ __metadata:
     postcss: 8.4.14
     react: 18.1.0
     react-dom: 18.1.0
+    react-icons: ^4.6.0
     sharp: ^0.31.1
     suspend-react: 0.0.8
     tailwindcss: 3.0.24
@@ -13312,6 +13313,15 @@ __metadata:
     prop-types: "*"
     react: "*"
   checksum: 460b58f82c092fd8f6814aee675f66375042bb88926baba3ab56678fdb5dedb433a51176311018127677d035d022f296a32e030f13ba7344e468dad7a108316c
+  languageName: node
+  linkType: hard
+
+"react-icons@npm:^4.6.0":
+  version: 4.6.0
+  resolution: "react-icons@npm:4.6.0"
+  peerDependencies:
+    react: "*"
+  checksum: a08375d4563e381e156d826a8d551dd26c1bf7c424a79139173bf4c8df71e884badd7d4f5fe9faa0d73d18ace265bcc89891b65fd8f808812b1011b612ebbc53
   languageName: node
   linkType: hard
 
