@@ -5,8 +5,10 @@ import { MdEmail } from 'react-icons/md';
 
 export const Home = () => {
   return (
-    <div className='mb-24 sm:mb-56 flex items-center justify-center flex-col mt-10'>
-      <h1 className='mb-10'>A Bit About Me</h1>
+    <div className='mb-24 sm:mb-56 rounded-lg flex items-center justify-center flex-col mt-10  border-2 border-solid border-gray-600'>
+      <div className='mb-10 flex justify-center items-center h-16 border-b-2 border-solid border-gray-600 w-full'>
+        <h1 className='text-white text-2xl'>👨‍💻 A Bit About Me</h1>
+      </div>
       <div className='mb-10 rounded-full overflow-hidden'>
         <Image
           src='/images/profile-kevin.jpg'
@@ -19,7 +21,7 @@ export const Home = () => {
           blurDataURL='/images/profile-kevin.jpg'
         />
       </div>
-      <section className='sm:w-2/3 flex flex-col'>
+      <section className='sm:w-2/3 flex flex-col px-4'>
         <p>
           I&apos;ve been designing and writing software since 2016. Currently
           working with React and Typescript on the frontend. Doing backend
@@ -32,8 +34,11 @@ export const Home = () => {
         <p className='mb-6'>
           Contact me to help you build slick UIs for your business needs.
         </p>
-        <p className='text-lg self-center'>📲 How to reach me</p>
-        <br />
+      </section>
+      <div className='flex border-y-2 border-solid border-gray-600 justify-center items-center h-14 w-full'>
+        <h2 className='text-xl text-white'>📲 How to reach me</h2>
+      </div>
+      <section className='flex flex-col py-6'>
         <div className='mb-3 flex gap-2 items-center'>
           <MdEmail size={30} className='inline' />{' '}
           <a
@@ -49,7 +54,7 @@ export const Home = () => {
             className='hover:text-cyan-400'
             href='https://www.linkedin.com/in/kevin-ruhl-b19b80166/'
           >
-            https://www.linkedin.com/in/kevin-ruhl-b19b80166/
+            My LinkedIn Website
           </a>
         </div>
       </section>
