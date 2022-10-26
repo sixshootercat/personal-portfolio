@@ -11,18 +11,15 @@ export const useScrollingUp = () => {
       } else {
         setShow(true);
       }
-
       // remember current page location to use in the next scroll move
       lastScrollY.current = window.scrollY;
     };
 
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', controlNavbar);
+    window.addEventListener('scroll', controlNavbar);
 
-      return () => {
-        window.removeEventListener('scroll', controlNavbar);
-      };
-    }
+    return () => {
+      window.removeEventListener('scroll', controlNavbar);
+    };
   }, [lastScrollY]);
 
   return show;

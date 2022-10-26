@@ -3,11 +3,7 @@ import { ReactElement } from 'react';
 import { MainLayout } from '@/components/layouts';
 
 const Home = () => {
-  return (
-    <div>
-      <HomeContent />
-    </div>
-  );
+  return <HomeContent />;
 };
 
 Home.getLayout = (page: ReactElement) => {

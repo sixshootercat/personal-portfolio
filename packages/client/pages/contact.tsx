@@ -3,11 +3,7 @@ import { Contact as ContactContent } from '@/containers/Contact';
 import { ReactElement } from 'react';
 
 const Contact = () => {
-  return (
-    <div>
-      <ContactContent />
-    </div>
-  );
+  return <ContactContent />;
 };
 
 Contact.getLayout = (page: ReactElement) => {

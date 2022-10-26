@@ -6,11 +6,7 @@ import { groq } from 'next-sanity';
 import { ReactElement } from 'react';
 
 const Experience = ({ experiences }: { experiences: any }) => {
-  return (
-    <div>
-      <ExperienceContent data={experiences} />
-    </div>
-  );
+  return <ExperienceContent data={experiences} />;
 };
 
 export const getStaticProps: GetStaticProps = async () => {

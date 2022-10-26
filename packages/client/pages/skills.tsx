@@ -3,11 +3,7 @@ import { Skills as SkillsContent } from '@/containers/Skills';
 import { ReactElement } from 'react';
 
 const Skills = () => {
-  return (
-    <div>
-      <SkillsContent />
-    </div>
-  );
+  return <SkillsContent />;
 };
 
 Skills.getLayout = (page: ReactElement) => {
