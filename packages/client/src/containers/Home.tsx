@@ -39,24 +39,18 @@ export const Home = () => {
         <h2 className='text-xl text-white'>📲 How to reach me</h2>
       </div>
       <section className='flex flex-col py-6'>
-        <div className='mb-3 flex gap-2 items-center'>
-          <MdEmail size={30} className='inline' />{' '}
-          <a
-            className='hover:text-cyan-400'
-            href='mailto:kevin.ruhl92@gmail.com'
-          >
-            kevin.ruhl92@gmail.com
-          </a>
-        </div>
-        <div className='flex gap-2 items-center'>
-          <AiFillLinkedin size={30} className='inline hover:text-cyan-400' />{' '}
-          <a
-            className='hover:text-cyan-400'
-            href='https://www.linkedin.com/in/kevin-ruhl-b19b80166/'
-          >
-            My LinkedIn Website
-          </a>
-        </div>
+        <a
+          className='hover:text-cyan-400 mb-3 flex gap-2 items-center'
+          href='mailto:kevin.ruhl92@gmail.com'
+        >
+          <MdEmail size={30} className='inline' /> kevin.ruhl92@gmail.com
+        </a>
+        <a
+          className='hover:text-cyan-400 flex gap-2 items-center'
+          href='https://www.linkedin.com/in/kevin-ruhl-b19b80166/'
+        >
+          <AiFillLinkedin size={30} className='inline' /> My LinkedIn Website
+        </a>
       </section>
     </div>
   );
