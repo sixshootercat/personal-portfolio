@@ -3278,7 +3278,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/uuid@npm:^8.0.0":
+"@types/uuid@npm:8.3.4, @types/uuid@npm:^8.0.0":
   version: 8.3.4
   resolution: "@types/uuid@npm:8.3.4"
   checksum: 6f11f3ff70f30210edaa8071422d405e9c1d4e53abbe50fdce365150d3c698fe7bbff65c1e71ae080cbfb8fded860dbb5e174da96fdbbdfcaa3fb3daa474d20f
@@ -5009,6 +5009,7 @@ __metadata:
     "@types/node": 17.0.35
     "@types/react": 18.0.9
     "@types/react-dom": 18.0.5
+    "@types/uuid": 8.3.4
     autoprefixer: 10.4.7
     eslint: 8.16.0
     eslint-config-next: 12.1.6
