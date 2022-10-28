@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 
 /**
- * checks if we are in the browser or not
+ * checks if code is being executed in the browser
  */
 export const useIsClient = () => {
-  const [isClient, setClient] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setClient(true);
+    setIsClient(true);
   }, []);
 
   return isClient;

@@ -1,4 +1,4 @@
-import { Home as HomeContent } from '@/containers/Home';
+import { Home as HomeContent } from '@/containers/home/Home';
 import { ReactElement } from 'react';
 import { MainLayout } from '@/components/layouts';
 
