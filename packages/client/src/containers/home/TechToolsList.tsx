@@ -1,6 +1,7 @@
 import { useMediaQuery } from '@mantine/hooks';
 import { MEDIA_QUERIES } from 'src/constants';
 import { createColumns } from './helpers';
+import { Text } from '@mantine/core';
 
 export type TechItem = {
   name: string;
@@ -22,7 +23,11 @@ export const TechToolsList = ({ items }: TechToolsListProps) => {
         return (
           <ul key={i} className='flex flex-col h-full gap-3 list-disc'>
             {col.map(({ name, id }) => {
-              return <li key={id}>{name}</li>;
+              return (
+                <li key={id}>
+                  <Text>{name}</Text>
+                </li>
+              );
             })}
           </ul>
         );

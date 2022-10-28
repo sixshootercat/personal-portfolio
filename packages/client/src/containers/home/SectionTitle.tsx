@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { Text } from '@mantine/core';
 
 type SectionTitleProps = {
   title: ReactNode;
@@ -7,7 +8,9 @@ type SectionTitleProps = {
 export const SectionTitle = ({ title }: SectionTitleProps) => {
   return (
     <div className='flex justify-center items-center h-14'>
-      <h1 className='text-2xl text-black dark:text-white'>{title}</h1>
+      <Text component='h1' size='xl'>
+        {title}
+      </Text>
     </div>
   );
 };
