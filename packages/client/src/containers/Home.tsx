@@ -1,13 +1,14 @@
-import { Text } from '@mantine/core';
 import Image from 'next/image';
 import { AiFillLinkedin } from 'react-icons/ai';
 import { MdEmail } from 'react-icons/md';
 
 export const Home = () => {
   return (
-    <div className='mb-24 sm:mb-56 rounded-lg flex items-center justify-center flex-col mt-10  border-2 border-solid border-gray-600'>
+    <div className='mb-24 sm:mb-56 rounded-lg flex items-center justify-center flex-col mt-10 border-2 border-solid border-gray-600'>
       <div className='mb-10 flex justify-center items-center h-16 border-b-2 border-solid border-gray-600 w-full'>
-        <h1 className='text-white text-2xl'>👨‍💻 A Bit About Me</h1>
+        <h1 className='text-black dark:text-white text-2xl'>
+          👨‍💻 A Bit About Me
+        </h1>
       </div>
       <div className='mb-10 rounded-full overflow-hidden'>
         <Image
@@ -36,7 +37,9 @@ export const Home = () => {
         </p>
       </section>
       <div className='flex border-y-2 border-solid border-gray-600 justify-center items-center h-14 w-full'>
-        <h2 className='text-xl text-white'>📲 How to reach me</h2>
+        <h2 className='text-xl text-black dark:text-white'>
+          📲 How to reach me
+        </h2>
       </div>
       <section className='flex flex-col py-6'>
         <a

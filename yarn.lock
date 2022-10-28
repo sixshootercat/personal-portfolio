@@ -5016,6 +5016,7 @@ __metadata:
     next: 12.1.6
     next-sanity: 0.5.2
     next-sanity-image: 3.2.1
+    next-themes: ^0.2.1
     nextjs-progressbar: 0.0.14
     postcss: 8.4.14
     react: 18.1.0
@@ -10823,6 +10824,17 @@ __metadata:
   peerDependencies:
     react: ">=16.3.0"
   checksum: 4b9a213d7e59dd324892af8459ab6d9d645dedaad44418e69cc1d2b1ff05169e7c126f36078784395841f14e80b697268b74bd914077164a18258cce1ce2ac70
+  languageName: node
+  linkType: hard
+
+"next-themes@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "next-themes@npm:0.2.1"
+  peerDependencies:
+    next: "*"
+    react: "*"
+    react-dom: "*"
+  checksum: ebc248b956138e73436c4ed0a0f0a877a0a48a33156db577029b8b8469e48b5c777d61abf2baeb75953378febea74e067a4869ff90b4a3e94fce123289b862ba
   languageName: node
   linkType: hard
 

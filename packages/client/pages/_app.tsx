@@ -2,6 +2,7 @@ import '../styles/globals.css';
 import { MainLayout } from '@/components/layouts';
 import { ErrorBoundary } from '@/components/error-boundary';
 import NextNProgress from 'nextjs-progressbar';
+import { ThemeProvider } from 'next-themes';
 import {
   ColorScheme,
   ColorSchemeProvider,
@@ -44,26 +45,28 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
   useHotkeys([['mod+J', () => toggleColorScheme()]]);
 
   return (
-    <ColorSchemeProvider
-      colorScheme={colorScheme}
-      toggleColorScheme={toggleColorScheme}
-    >
-      <MantineProvider
-        theme={{ ...themeConfig(colorScheme) }}
-        withNormalizeCSS
-        withGlobalStyles
+    <ThemeProvider enableSystem attribute='class'>
+      <ColorSchemeProvider
+        colorScheme={colorScheme}
+        toggleColorScheme={toggleColorScheme}
       >
-        <NextNProgress
-          color={theme.colors.cyan[4]}
-          options={{ showSpinner: false }}
-        />
-        {getLayout(
-          <ErrorBoundary>
-            <Component {...pageProps} />
-          </ErrorBoundary>
-        )}
-      </MantineProvider>
-    </ColorSchemeProvider>
+        <MantineProvider
+          theme={{ ...themeConfig(colorScheme) }}
+          withNormalizeCSS
+          withGlobalStyles
+        >
+          <NextNProgress
+            color={theme.colors.cyan[4]}
+            options={{ showSpinner: false }}
+          />
+          {getLayout(
+            <ErrorBoundary>
+              <Component {...pageProps} />
+            </ErrorBoundary>
+          )}
+        </MantineProvider>
+      </ColorSchemeProvider>
+    </ThemeProvider>
   );
 };
 
