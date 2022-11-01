@@ -6,7 +6,7 @@ export const ThemeIcon = () => {
   const { colorScheme, toggleColorScheme: toggleMantineTheme } =
     useMantineColorScheme();
 
-  const { systemTheme, theme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   const toggleTailwindTheme = () => {
     if (theme) {
@@ -20,12 +20,10 @@ export const ThemeIcon = () => {
   };
 
   const isMantineDark = colorScheme === 'dark';
-  const tailwindTheme = theme === 'system' ? systemTheme : theme;
-  const isTailwindDark = tailwindTheme === 'dark';
 
   return (
     <div className='cursor-pointer'>
-      {isMantineDark || isTailwindDark ? (
+      {isMantineDark ? (
         <SunIcon onClick={toggleThemes} />
       ) : (
         <MoonIcon onClick={toggleThemes} />
