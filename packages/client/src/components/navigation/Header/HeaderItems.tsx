@@ -2,7 +2,6 @@ import { ThemeIcon } from '@/components/icons';
 import { Box, Burger, Text } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import Link from 'next/link';
-import { ReactNode } from 'react';
 import { MEDIA_QUERIES } from 'src/constants';
 import { NAV_ITEMS } from '../navigation.constants';
 

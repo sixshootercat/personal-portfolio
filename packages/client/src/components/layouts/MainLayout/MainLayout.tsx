@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Footer, Header, MenuOverlay } from '@/components/navigation';
 import { AppShell, useMantineTheme, Box } from '@mantine/core';
-import { useIsClient } from '@/hooks';
+import { useIsSSR } from '@/hooks';
 import { useScrollLock } from '@mantine/hooks';
 import { MenuOverlayItems } from '@/components/navigation/MenuOverlay';
 import { HeaderItems } from '@/components/navigation/Header';
@@ -21,16 +21,16 @@ export const MainLayout = ({
 }: MainLayoutProps) => {
   const theme = useMantineTheme();
   const [, setScrollLocked] = useScrollLock(false);
-  const isClient = useIsClient();
-  const [navMenuOpened, setNavMenuOpened] = useState(false);
+  const isSSR = useIsSSR();
+  const [isNavMenuOpen, setIsNavMenuOpen] = useState(false);
 
   const toggleMenuOverlay = () => {
     setScrollLocked((p) => !p);
-    setNavMenuOpened((o) => !o);
+    setIsNavMenuOpen((o) => !o);
   };
 
   // NOTE: avoid server and client rendering result mismatch
-  if (!isClient) return null;
+  if (!isSSR) return null;
 
   return (
     <AppShell
@@ -45,11 +45,11 @@ export const MainLayout = ({
       padding={0}
       header={
         <Header>
-          <HeaderItems isOpen={navMenuOpened} onClick={toggleMenuOverlay} />
+          <HeaderItems isOpen={isNavMenuOpen} onClick={toggleMenuOverlay} />
         </Header>
       }
       navbar={
-        <MenuOverlay isOpen={navMenuOpened}>
+        <MenuOverlay isOpen={isNavMenuOpen}>
           <MenuOverlayItems onItemClick={toggleMenuOverlay} />
         </MenuOverlay>
       }
