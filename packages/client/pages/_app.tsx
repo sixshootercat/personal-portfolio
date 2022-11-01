@@ -45,7 +45,7 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
   useHotkeys([['mod+J', () => toggleColorScheme()]]);
 
   return (
-    <ThemeProvider enableSystem attribute='class'>
+    <ThemeProvider defaultTheme='light' enableSystem attribute='class'>
       <ColorSchemeProvider
         colorScheme={colorScheme}
         toggleColorScheme={toggleColorScheme}
