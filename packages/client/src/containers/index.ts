@@ -1,4 +1,4 @@
 export { Contact } from './Contact';
-export { Home } from './Home';
+export { Home } from './home/Home';
 export { Experience } from './Experience';
 export { Skills } from './Skills';

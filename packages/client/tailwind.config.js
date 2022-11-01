@@ -9,4 +9,9 @@ module.exports = {
   },
   darkMode: 'class',
   plugins: [],
+  purge: {
+    options: {
+      safelist: ['dark'],
+    },
+  },
 };
