@@ -27,45 +27,45 @@ type AppPropsWithLayout = AppProps & {
 };
 
 const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
-  const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
-    key: 'mantine-color-scheme',
-    defaultValue: 'light',
-    getInitialValueInEffect: true,
-  });
+  // const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
+  //   key: 'mantine-color-scheme',
+  //   defaultValue: 'light',
+  //   getInitialValueInEffect: true,
+  // });
 
   const theme = useMantineTheme();
 
-  const toggleColorScheme = (value?: ColorScheme) => {
-    setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
-  };
+  // const toggleColorScheme = (value?: ColorScheme) => {
+  //   setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
+  // };
 
   const getLayout =
     Component.getLayout ?? ((page) => <MainLayout>{page}</MainLayout>);
 
-  useHotkeys([['mod+J', () => toggleColorScheme()]]);
+  // useHotkeys([['mod+J', () => toggleColorScheme()]]);
 
   return (
-    <ThemeProvider attribute='class'>
-      <ColorSchemeProvider
+    <ThemeProvider enableSystem attribute='class'>
+      {/* <ColorSchemeProvider
         colorScheme={colorScheme}
         toggleColorScheme={toggleColorScheme}
+      > */}
+      <MantineProvider
+        theme={{ ...themeConfig() }}
+        withNormalizeCSS
+        withGlobalStyles
       >
-        <MantineProvider
-          theme={{ ...themeConfig(colorScheme) }}
-          withNormalizeCSS
-          withGlobalStyles
-        >
-          <NextNProgress
-            color={theme.colors.cyan[4]}
-            options={{ showSpinner: false }}
-          />
-          {getLayout(
-            <ErrorBoundary>
-              <Component {...pageProps} />
-            </ErrorBoundary>
-          )}
-        </MantineProvider>
-      </ColorSchemeProvider>
+        <NextNProgress
+          color={theme.colors.cyan[4]}
+          options={{ showSpinner: false }}
+        />
+        {getLayout(
+          <ErrorBoundary>
+            <Component {...pageProps} />
+          </ErrorBoundary>
+        )}
+      </MantineProvider>
+      {/* </ColorSchemeProvider> */}
     </ThemeProvider>
   );
 };

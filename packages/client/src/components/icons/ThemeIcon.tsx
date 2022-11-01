@@ -20,7 +20,7 @@ export const ThemeIcon = () => {
   };
 
   const isMantineDark = colorScheme === 'dark';
-  const tailwindTheme = theme;
+  const tailwindTheme = theme === 'system' ? systemTheme : theme;
   const isTailwindDark = tailwindTheme === 'dark';
 
   return (
