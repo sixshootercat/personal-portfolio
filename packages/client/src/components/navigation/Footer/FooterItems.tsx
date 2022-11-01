@@ -63,9 +63,8 @@ export const FooterItems = () => {
             ))}
           </Group>
         </Group>
-        {isMobile && <Divider size='xs' sx={{ width: '50%' }} />}
       </Group>
-      <div className='mt-16'>
+      <div className='mt-16 sm:justify-start flex justify-center'>
         <span className=''>All rights reserved </span>
         <span>© Kevin Ruhl 2022</span>
       </div>

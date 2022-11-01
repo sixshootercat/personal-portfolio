@@ -16,7 +16,7 @@ export const TechTools = () => {
   return (
     <>
       <SectionTitle title='🧰 Techs & Tools' />
-      <section className='flex py-6 w-full dark:bg-slate-700 bg-slate-100'>
+      <section className='flex py-6 w-full mb-10 dark:bg-slate-700 bg-slate-100'>
         <TechToolsList items={TECHS} />
       </section>
     </>

@@ -7,7 +7,7 @@ const Home = () => {
 };
 
 Home.getLayout = (page: ReactElement) => {
-  return <MainLayout height={100}>{page}</MainLayout>;
+  return <MainLayout>{page}</MainLayout>;
 };
 
 export default Home;
