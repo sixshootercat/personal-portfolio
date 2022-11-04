@@ -9,7 +9,7 @@ import {
   MantineProvider,
   useMantineTheme,
 } from '@mantine/core';
-import { useHotkeys, useLocalStorage } from '@mantine/hooks';
+import { useLocalStorage } from '@mantine/hooks';
 import { NextPage } from 'next';
 import { ReactElement, ReactNode } from 'react';
 import { AppProps } from 'next/app';
@@ -27,36 +27,37 @@ type AppPropsWithLayout = AppProps & {
 };
 
 const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
-  const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
-    key: 'mantine-color-scheme',
-    defaultValue: 'light',
-    getInitialValueInEffect: true,
-  });
+  const [mantineThemeColor, setMantineThemeColor] =
+    useLocalStorage<ColorScheme>({
+      key: 'mantine-color-scheme',
+      defaultValue: 'light',
+      getInitialValueInEffect: true,
+    });
 
-  const theme = useMantineTheme();
-
-  const toggleColorScheme = (value?: ColorScheme) => {
-    setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
-  };
+  const mantineTheme = useMantineTheme();
 
   const getLayout =
     Component.getLayout ?? ((page) => <MainLayout>{page}</MainLayout>);
 
-  useHotkeys([['mod+J', () => toggleColorScheme()]]);
+  const toggleColorScheme = (value?: ColorScheme) => {
+    setMantineThemeColor(
+      value || (mantineThemeColor === 'dark' ? 'light' : 'dark')
+    );
+  };
 
   return (
-    <ThemeProvider defaultTheme='light' enableSystem attribute='class'>
+    <ThemeProvider defaultTheme='light' attribute='class'>
       <ColorSchemeProvider
-        colorScheme={colorScheme}
+        colorScheme={mantineThemeColor}
         toggleColorScheme={toggleColorScheme}
       >
         <MantineProvider
-          theme={{ ...themeConfig(colorScheme) }}
+          theme={{ ...themeConfig(mantineThemeColor) }}
           withNormalizeCSS
           withGlobalStyles
         >
           <NextNProgress
-            color={theme.colors.cyan[4]}
+            color={mantineTheme.colors.cyan[4]}
             options={{ showSpinner: false }}
           />
           {getLayout(

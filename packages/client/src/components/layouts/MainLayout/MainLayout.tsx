@@ -6,6 +6,7 @@ import { useScrollLock } from '@mantine/hooks';
 import { MenuOverlayItems } from '@/components/navigation/MenuOverlay';
 import { HeaderItems } from '@/components/navigation/Header';
 import { FooterItems } from '@/components/navigation/Footer';
+import { useToggleThemeHotkey } from './useToggleThemeHotkey';
 
 type MainLayoutProps = {
   children: React.ReactNode;
@@ -29,6 +30,7 @@ export const MainLayout = ({
     setIsNavMenuOpen((o) => !o);
   };
 
+  useToggleThemeHotkey();
   // NOTE: avoid server and client rendering result mismatch
   if (!isSSR) return null;
 

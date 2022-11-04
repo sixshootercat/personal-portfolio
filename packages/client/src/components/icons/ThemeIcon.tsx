@@ -3,8 +3,7 @@ import { useMantineColorScheme } from '@mantine/core';
 import { useTheme } from 'next-themes';
 
 export const ThemeIcon = () => {
-  const { colorScheme, toggleColorScheme: toggleMantineTheme } =
-    useMantineColorScheme();
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
 
   const { theme, setTheme } = useTheme();
 
@@ -14,19 +13,19 @@ export const ThemeIcon = () => {
     }
   };
 
-  const toggleThemes = () => {
-    toggleMantineTheme();
+  const toggleThemeColors = () => {
+    toggleColorScheme();
     toggleTailwindTheme();
   };
 
-  const isMantineDark = colorScheme === 'dark';
+  const isDarkTheme = colorScheme === 'dark' && theme === 'dark';
 
   return (
     <div className='cursor-pointer'>
-      {isMantineDark ? (
-        <SunIcon onClick={toggleThemes} />
+      {isDarkTheme ? (
+        <SunIcon onClick={toggleThemeColors} />
       ) : (
-        <MoonIcon onClick={toggleThemes} />
+        <MoonIcon onClick={toggleThemeColors} />
       )}
     </div>
   );

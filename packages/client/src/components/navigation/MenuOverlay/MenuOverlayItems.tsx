@@ -1,4 +1,4 @@
-import { Group, useMantineColorScheme } from '@mantine/core';
+import { useMantineColorScheme } from '@mantine/core';
 import React from 'react';
 import { NAV_ITEMS } from '../navigation.constants';
 import { MenuOverlayThemeItem, MenuOverlayLinkItem } from './components';
@@ -17,7 +17,7 @@ export const MenuOverlayItems = ({
           <MenuOverlayLinkItem item={el} key={el.id} onClick={onItemClick} />
         );
       })}
-      <MenuOverlayThemeItem onClick={() => toggleColorScheme()} />
+      <MenuOverlayThemeItem onClick={toggleColorScheme} />
     </div>
   );
 };
