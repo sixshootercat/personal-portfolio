@@ -1,13 +1,15 @@
 import { Home as HomeContent } from '@/containers/home/Home';
-import { ReactElement } from 'react';
-import { MainLayout } from '@/components/layouts';
+import Head from 'next/head';
 
 const Home = () => {
-  return <HomeContent />;
-};
-
-Home.getLayout = (page: ReactElement) => {
-  return <MainLayout>{page}</MainLayout>;
+  return (
+    <>
+      <Head>
+        <title>Home</title>
+      </Head>
+      <HomeContent />
+    </>
+  );
 };
 
 export default Home;

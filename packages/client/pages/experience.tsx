@@ -3,10 +3,18 @@ import { Experience as ExperienceContent } from '@/containers/Experience';
 import { client } from '@/sanity/sanity-client';
 import { GetStaticProps } from 'next';
 import { groq } from 'next-sanity';
+import Head from 'next/head';
 import { ReactElement } from 'react';
 
 const Experience = ({ experiences }: { experiences: any }) => {
-  return <ExperienceContent data={experiences} />;
+  return (
+    <>
+      <Head>
+        <title>Experience</title>
+      </Head>
+      <ExperienceContent data={experiences} />
+    </>
+  );
 };
 
 export const getStaticProps: GetStaticProps = async () => {

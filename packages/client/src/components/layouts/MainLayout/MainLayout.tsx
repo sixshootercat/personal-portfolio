@@ -11,7 +11,6 @@ import { useToggleThemeHotkey } from './useToggleThemeHotkey';
 type MainLayoutProps = {
   children: React.ReactNode;
   marginTop?: string | number;
-  hasBodyPad?: boolean;
   height?: number;
 };
 
@@ -31,6 +30,7 @@ export const MainLayout = ({
   };
 
   useToggleThemeHotkey();
+
   // NOTE: avoid server and client rendering result mismatch
   if (!isSSR) return null;
 
