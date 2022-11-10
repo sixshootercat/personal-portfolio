@@ -1,8 +1,6 @@
 import { Box, Group, Text } from '@mantine/core';
-import { useMediaQuery } from '@mantine/hooks';
 import Link from 'next/link';
 import React, { ReactNode } from 'react';
-import { MEDIA_QUERIES } from 'src/constants';
 import { FOOTER_NAV_ITEMS } from '../navigation.constants';
 
 const FooterLogo = ({
