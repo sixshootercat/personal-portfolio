@@ -1,4 +1,4 @@
-import { Box, Divider, Group, Text } from '@mantine/core';
+import { Box, Group, Text } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import Link from 'next/link';
 import React, { ReactNode } from 'react';
@@ -22,8 +22,6 @@ const FooterLogo = ({
 };
 
 export const FooterItems = () => {
-  const isMobile = useMediaQuery(MEDIA_QUERIES.mobile);
-
   const aboutCol = FOOTER_NAV_ITEMS.filter(
     (item) => item.column === 'about me'
   );
