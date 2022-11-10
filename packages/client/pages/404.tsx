@@ -1,7 +1,5 @@
-import { MainLayout } from '@/components/layouts';
 import { Group, Text } from '@mantine/core';
 import Link from 'next/link';
-import { ReactElement } from 'react';
 import { BgImage } from '@/components/images';
 import Head from 'next/head';
 
@@ -30,10 +28,6 @@ const NotFound = () => {
       </BgImage>
     </>
   );
-};
-
-NotFound.getLayout = (page: ReactElement) => {
-  return <MainLayout marginTop={0}>{page}</MainLayout>;
 };
 
 export default NotFound;

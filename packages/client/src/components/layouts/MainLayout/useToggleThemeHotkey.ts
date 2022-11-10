@@ -1,4 +1,4 @@
-import { ColorScheme, useMantineColorScheme } from '@mantine/core';
+import { useMantineColorScheme } from '@mantine/core';
 import { useHotkeys } from '@mantine/hooks';
 import { useTheme } from 'next-themes';
 

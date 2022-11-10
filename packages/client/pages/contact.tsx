@@ -1,21 +1,15 @@
-import { MainLayout } from '@/components/layouts';
 import { Contact as ContactContent } from '@/containers/Contact';
 import Head from 'next/head';
-import { ReactElement } from 'react';
 
 const Contact = () => {
   return (
-    <>
+    <div className='mt-24'>
       <Head>
         <title>Projects</title>
       </Head>
       <ContactContent />
-    </>
+    </div>
   );
-};
-
-Contact.getLayout = (page: ReactElement) => {
-  return <MainLayout height={100}>{page}</MainLayout>;
 };
 
 export default Contact;

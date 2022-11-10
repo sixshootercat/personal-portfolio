@@ -10,15 +10,9 @@ import { useToggleThemeHotkey } from './useToggleThemeHotkey';
 
 type MainLayoutProps = {
   children: React.ReactNode;
-  marginTop?: string | number;
-  height?: number;
 };
 
-export const MainLayout = ({
-  children,
-  marginTop = '90px',
-  height = 0,
-}: MainLayoutProps) => {
+export const MainLayout = ({ children }: MainLayoutProps) => {
   const theme = useMantineTheme();
   const [, setScrollLocked] = useScrollLock(false);
   const isSSR = useIsSSR();
@@ -63,8 +57,6 @@ export const MainLayout = ({
     >
       <Box
         sx={{
-          marginTop,
-          ...(height && { height: `${height}%` }),
           padding: '15px 5%',
         }}
       >

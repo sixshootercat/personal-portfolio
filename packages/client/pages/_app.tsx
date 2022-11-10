@@ -10,23 +10,13 @@ import {
   useMantineTheme,
 } from '@mantine/core';
 import { useLocalStorage } from '@mantine/hooks';
-import { NextPage } from 'next';
-import { ReactElement, ReactNode } from 'react';
 import { AppProps } from 'next/app';
 import { themeConfig } from '@/config/theme-config';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
 config.autoAddCss = false;
 
-type NextPageWithLayout = NextPage & {
-  getLayout?: (page: ReactElement) => ReactNode;
-};
-
-type AppPropsWithLayout = AppProps & {
-  Component: NextPageWithLayout;
-};
-
-const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
+const MyApp = ({ Component, pageProps }: AppProps) => {
   const [mantineThemeColor, setMantineThemeColor] =
     useLocalStorage<ColorScheme>({
       key: 'mantine-color-scheme',
@@ -35,9 +25,6 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
     });
 
   const mantineTheme = useMantineTheme();
-
-  const getLayout =
-    Component.getLayout ?? ((page) => <MainLayout>{page}</MainLayout>);
 
   const toggleColorScheme = (value?: ColorScheme) => {
     setMantineThemeColor(
@@ -60,11 +47,11 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
             color={mantineTheme.colors.cyan[4]}
             options={{ showSpinner: false }}
           />
-          {getLayout(
-            <ErrorBoundary>
+          <ErrorBoundary>
+            <MainLayout>
               <Component {...pageProps} />
-            </ErrorBoundary>
-          )}
+            </MainLayout>
+          </ErrorBoundary>
         </MantineProvider>
       </ColorSchemeProvider>
     </ThemeProvider>
