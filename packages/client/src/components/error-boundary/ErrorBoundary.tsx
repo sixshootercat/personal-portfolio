@@ -1,4 +1,7 @@
+import { Button, Group, Text } from '@mantine/core';
+import Link from 'next/link';
 import React from 'react';
+import { BgImage } from '../images';
 
 type MyProps = {
   children: React.ReactNode;
@@ -23,15 +26,33 @@ class ErrorBoundary extends React.Component<MyProps, MyState> {
   render() {
     if (this.state.hasError) {
       return (
-        <div>
-          <h2>Oops, there is an error!</h2>
-          <button
-            type='button'
-            onClick={() => this.setState({ hasError: false })}
+        <>
+          <BgImage
+            src='/images/foggy-mountains.jpg'
+            alt='foggy mountains'
+            className='items-center h-screen justify-center w-full flex relative'
           >
-            Try again?
-          </button>
-        </div>
+            <Group direction='column' align='center'>
+              <Text color='black' className='text-5xl h-'>
+                404
+              </Text>
+              <Text color='black' size='lg'>
+                Oops, something isn&apos;t right.
+              </Text>
+              <Text color='black' size='md'>
+                <Link href='/'>Go back home</Link>
+              </Text>
+              <Button
+                variant='subtle'
+                onClick={() => this.setState({ hasError: false })}
+              >
+                <Text weight={400} color='black' size='md'>
+                  Try Again?
+                </Text>
+              </Button>
+            </Group>
+          </BgImage>
+        </>
       );
     }
 
