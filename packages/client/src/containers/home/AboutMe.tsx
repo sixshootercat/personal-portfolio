@@ -19,12 +19,12 @@ export const AboutMe = () => {
       </div>
       <section className='flex flex-col'>
         <p>
-          Pragmatic thinker and problem solver. I've been designing and
+          Pragmatic thinker and problem solver. I&apos;ve been designing and
           developing solutions since 2016. For the past 5 years, I have been
           working as a frontend engineer IC with tools like React, TypeScript,
           and Next.js. Ocassionally, I delve into backend development using
           primarily Node.js and Golang for various personal side projects. When
-          I'm not programming, you can find me reading up on philosophy and
+          I&apos;m not programming, you can find me reading up on philosophy and
           psychology content, doing physical training, and trying out new
           specialty coffee houses.
         </p>
