@@ -19,16 +19,19 @@ export const AboutMe = () => {
       </div>
       <section className='flex flex-col'>
         <p>
-          I&apos;ve been designing and writing software since 2016. Currently
-          working with React and Typescript on the frontend. Doing backend
-          development with Node and Go. I&apos;m a pragmatic thinker and
-          technology agnostic. When I&apos;m not programming, some other
-          activities I enjoy doing in my free time are listening to philosophy
-          podcasts, doing physical training, and traveling.
+          Pragmatic thinker and problem solver. I've been designing and
+          developing solutions since 2016. For the past 5 years, I have been
+          working as a frontend engineer IC with tools like React, TypeScript,
+          and Next.js. Ocassionally, I delve into backend development using
+          primarily Node.js and Golang for various personal side projects. When
+          I'm not programming, you can find me reading up on philosophy and
+          psychology content, doing physical training, and trying out new
+          specialty coffee houses.
         </p>
         <br />
         <p className='mb-6'>
-          Contact me to help you build slick UIs for your business needs.
+          Feel free to reach out to me through my contact links to discuss
+          potential collaborations or opportunities in software development.
         </p>
       </section>
     </>
