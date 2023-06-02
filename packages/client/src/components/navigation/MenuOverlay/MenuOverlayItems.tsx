@@ -1,4 +1,3 @@
-import { useMantineColorScheme } from '@mantine/core';
 import React from 'react';
 import { NAV_ITEMS } from '../navigation.constants';
 import { MenuOverlayThemeItem, MenuOverlayLinkItem } from './components';
@@ -8,7 +7,7 @@ export const MenuOverlayItems = ({
 }: {
   onItemClick: () => void;
 }) => {
-  const { toggleColorScheme } = useMantineColorScheme();
+  // const { toggleColorScheme } = useMantineColorScheme();
 
   return (
     <div className='flex flex-col h-full '>
@@ -17,7 +16,7 @@ export const MenuOverlayItems = ({
           <MenuOverlayLinkItem item={el} key={el.id} onClick={onItemClick} />
         );
       })}
-      <MenuOverlayThemeItem onClick={toggleColorScheme} />
+      <MenuOverlayThemeItem />
     </div>
   );
 };

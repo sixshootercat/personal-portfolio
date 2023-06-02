@@ -1,12 +1,12 @@
 import { AboutMe } from './AboutMe';
-import { TechTools } from './TechTools';
+import { Technologies } from './Technologies';
 import { ContactMe } from './ContactMe';
 
 export const Home = () => {
   return (
     <div className='mb-8 flex items-center justify-center flex-col mt-10 md:px-20'>
       <AboutMe />
-      <TechTools />
+      <Technologies />
       <ContactMe />
     </div>
   );

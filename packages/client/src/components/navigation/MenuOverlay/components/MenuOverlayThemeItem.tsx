@@ -1,20 +1,20 @@
 import { MenuOverlayItem } from '.';
-import { Space, Text, useMantineColorScheme } from '@mantine/core';
+import { Space, Text } from '@mantine/core';
 import { ThemeIcon } from '@/components/icons';
+import { useTheme } from '@/hooks';
 
 type MenuOverlayThemeItemProps = {
-  onClick: () => void;
+  onClick?: () => void;
 };
 
 export const MenuOverlayThemeItem = ({
   onClick,
 }: MenuOverlayThemeItemProps) => {
-  const { colorScheme } = useMantineColorScheme();
-  const dark = colorScheme === 'dark';
+  const { isDarkTheme, toggleThemeColors } = useTheme();
 
   return (
-    <MenuOverlayItem divider={false} onClick={onClick}>
-      <Text>{dark ? 'Light' : 'Dark'}</Text>
+    <MenuOverlayItem divider={false} onClick={toggleThemeColors}>
+      <Text>{isDarkTheme ? 'Light' : 'Dark'}</Text>
       <Space w='xs' />
       <ThemeIcon />
     </MenuOverlayItem>

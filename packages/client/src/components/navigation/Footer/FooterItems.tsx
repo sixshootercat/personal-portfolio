@@ -62,7 +62,7 @@ export const FooterItems = () => {
       </Group>
       <div className='mt-16 sm:justify-start flex justify-center'>
         <span className=''>All rights reserved </span>
-        <span>© Kevin Ruhl 2022</span>
+        <span>© Kevin Ruhl 2023</span>
       </div>
     </>
   );

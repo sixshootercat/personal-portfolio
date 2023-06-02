@@ -1,6 +1,6 @@
 export type IconProps = {
   size?: string | number;
-  onClick: () => void;
+  onClick?: () => void;
   className?: string;
   fill?: string;
 };

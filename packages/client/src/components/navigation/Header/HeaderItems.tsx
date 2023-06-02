@@ -4,6 +4,7 @@ import { useMediaQuery } from '@mantine/hooks';
 import Link from 'next/link';
 import { MEDIA_QUERIES } from 'src/constants';
 import { NAV_ITEMS } from '../navigation.constants';
+import { useTheme } from '@/hooks';
 
 const HeaderLogo = () => {
   return (
@@ -25,6 +26,7 @@ export const HeaderItems = ({
   isOpen: boolean;
 }) => {
   const isDesktop = useMediaQuery(MEDIA_QUERIES.desktop);
+  const { toggleThemeColors } = useTheme();
 
   return (
     <div className='h-full flex items-center'>
@@ -38,7 +40,7 @@ export const HeaderItems = ({
         <Box className='flex justify-between items-center w-full h-full'>
           <HeaderLogo />
           <Box className='flex justify-center items-center'>
-            <ThemeIcon />
+            <ThemeIcon onClick={toggleThemeColors} />
             {NAV_ITEMS.map((el) => (
               <div key={el.id} className='mx-4 hover:text-cyan-400'>
                 <Link href={el.link}>{el.name}</Link>

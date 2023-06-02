@@ -1,32 +1,12 @@
 import { MoonIcon, SunIcon } from '@/components/icons';
-import { useMantineColorScheme } from '@mantine/core';
-import { useTheme } from 'next-themes';
+import { useTheme } from '@/hooks';
 
-export const ThemeIcon = () => {
-  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
-
-  const { theme, setTheme } = useTheme();
-
-  const toggleTailwindTheme = () => {
-    if (theme) {
-      setTheme(theme === 'light' ? 'dark' : 'light');
-    }
-  };
-
-  const toggleThemeColors = () => {
-    toggleColorScheme();
-    toggleTailwindTheme();
-  };
-
-  const isDarkTheme = colorScheme === 'dark' && theme === 'dark';
+export const ThemeIcon = ({ onClick }: { onClick?: () => void }) => {
+  const { isDarkTheme } = useTheme();
 
   return (
-    <div className='cursor-pointer'>
-      {isDarkTheme ? (
-        <SunIcon onClick={toggleThemeColors} />
-      ) : (
-        <MoonIcon onClick={toggleThemeColors} />
-      )}
+    <div className='cursor-pointer' onClick={onClick}>
+      {isDarkTheme ? <SunIcon /> : <MoonIcon />}
     </div>
   );
 };
