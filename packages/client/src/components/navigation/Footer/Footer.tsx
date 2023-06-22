@@ -8,7 +8,7 @@ export const Footer = () => {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        padding: '15px 5%',
+        padding: '30px',
       }}
       height='auto'
     >
