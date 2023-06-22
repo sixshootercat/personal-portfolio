@@ -2284,7 +2284,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sanity/cli@npm:^2.30.2":
+"@sanity/cli@npm:2.30.2":
   version: 2.30.2
   resolution: "@sanity/cli@npm:2.30.2"
   bin:
@@ -2931,7 +2931,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sanity/types@npm:2.29.5, @sanity/types@npm:^2.0.1, @sanity/types@npm:^2.29.5":
+"@sanity/types@npm:2.29.5, @sanity/types@npm:^2.0.1":
   version: 2.29.5
   resolution: "@sanity/types@npm:2.29.5"
   dependencies:
@@ -14371,13 +14371,13 @@ __metadata:
   dependencies:
     "@babel/preset-env": 7.18.2
     "@sanity/base": 2.30.0
-    "@sanity/cli": ^2.30.2
+    "@sanity/cli": 2.30.2
     "@sanity/core": 2.30.0
     "@sanity/default-layout": 2.30.0
     "@sanity/default-login": 2.30.0
     "@sanity/desk-tool": 2.30.0
     "@sanity/eslint-config-studio": 2.0.0
-    "@sanity/types": ^2.29.5
+    "@sanity/types": 2.29.5
     "@sanity/vision": 2.30.0
     eslint: 8.6.0
     prop-types: 15.7

@@ -1,11 +1,7 @@
 import React from 'react';
 import { Footer as MantineFooter } from '@mantine/core';
 
-type FooterProps = {
-  children: React.ReactNode;
-};
-
-export const Footer = ({ children }: FooterProps) => {
+export const Footer = () => {
   return (
     <MantineFooter
       sx={{
@@ -16,7 +12,10 @@ export const Footer = ({ children }: FooterProps) => {
       }}
       height='auto'
     >
-      {children}
+      <div className='sm:justify-start flex justify-center'>
+        <span className=''>All rights reserved </span>
+        <span>© Kevin Ruhl 2023</span>
+      </div>
     </MantineFooter>
   );
 };

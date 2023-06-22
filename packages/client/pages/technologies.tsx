@@ -1,17 +1,16 @@
-import { Home as HomeContent } from '@/containers/home/Home';
+import { Technologies as TechContent } from '@/containers/Technologies';
 import { GetStaticProps } from 'next';
 import { groq } from 'next-sanity';
 import { client } from '@/sanity/sanity-client';
-
 import Head from 'next/head';
 
-const Home = ({ technologies }: { technologies: any }) => {
+const Skills = ({ technologies }: { technologies: any }) => {
   return (
     <div className='mt-24'>
       <Head>
-        <title>Home</title>
+        <title>Skills</title>
       </Head>
-      <HomeContent items={technologies} />
+      <TechContent content={technologies} />
     </div>
   );
 };
@@ -27,4 +26,4 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export default Home;
+export default Skills;

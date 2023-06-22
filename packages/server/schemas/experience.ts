@@ -4,15 +4,26 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'year',
-      title: 'Year',
-      type: 'number',
+      name: 'companyName',
+      title: 'Company Name',
+      type: 'string',
     },
     {
-      name: 'jobs',
-      title: 'Jobs',
-      type: 'array',
-      of: [{ type: 'workExperience' }],
+      name: 'description',
+      title: 'Description',
+      type: 'text',
+    },
+    {
+      name: 'startDate',
+      title: 'Start Date',
+      type: 'date',
+      placeholder: 'YYYY-MM-DD',
+    },
+    {
+      name: 'endDate',
+      title: 'End Date',
+      type: 'date',
+      placeholder: 'YYYY-MM-DD',
     },
   ],
 };

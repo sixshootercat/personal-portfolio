@@ -3,12 +3,9 @@ import createSchema from 'part:@sanity/base/schema-creator';
 
 // Then import schema types from any plugins that might expose them
 import schemaTypes from 'all:part:@sanity/base/schema-type';
-import skills from './skills';
+import technologies from './technologies';
 import experience from './experience';
-import contact from './contact';
-import projects from './projects';
-import bio from './bio';
-import workExperience from './workExperience';
+import aboutMe from './aboutMe';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -16,12 +13,5 @@ export default createSchema({
   name: 'default',
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
-  types: schemaTypes.concat([
-    skills,
-    experience,
-    contact,
-    projects,
-    bio,
-    workExperience,
-  ]),
+  types: schemaTypes.concat([technologies, experience, aboutMe]),
 });
