@@ -4,11 +4,11 @@ import { groq } from 'next-sanity';
 import { client } from '@/sanity/sanity-client';
 import Head from 'next/head';
 
-const Skills = ({ technologies }: { technologies: any }) => {
+const Technologies = ({ technologies }: { technologies: any }) => {
   return (
     <div className='mt-24'>
       <Head>
-        <title>Skills</title>
+        <title>Technologies & Tools</title>
       </Head>
       <TechContent content={technologies} />
     </div>
@@ -26,4 +26,4 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export default Skills;
+export default Technologies;

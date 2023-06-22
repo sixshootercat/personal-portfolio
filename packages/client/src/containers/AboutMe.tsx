@@ -1,10 +1,10 @@
 import { WIP } from '@/components/misc';
 import React from 'react';
 
-export const Projects = () => {
+export const AboutMe = () => {
   return (
     <div>
-      <h1>Projects</h1>
+      <h1>About Me</h1>
       <WIP />
     </div>
   );

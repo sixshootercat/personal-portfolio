@@ -1,4 +1,4 @@
-import { Contact as ContactContent } from '@/containers/Contact';
+import { AboutMe as AboutMeContent } from '@/containers/AboutMe';
 import Head from 'next/head';
 
 const AboutMe = () => {
@@ -7,7 +7,7 @@ const AboutMe = () => {
       <Head>
         <title>About Me</title>
       </Head>
-      <ContactContent />
+      <AboutMeContent />
     </div>
   );
 };
