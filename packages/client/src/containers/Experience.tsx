@@ -5,7 +5,7 @@ export const Experience = ({ data }: { data: any }) => {
   if (!data.length) {
     return (
       <div>
-        <h1>Experiences</h1>
+        <h1>Experience</h1>
         <WIP />
       </div>
     );

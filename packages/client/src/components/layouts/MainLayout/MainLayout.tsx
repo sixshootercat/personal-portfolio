@@ -5,7 +5,6 @@ import { useIsSSR } from '@/hooks';
 import { useScrollLock } from '@mantine/hooks';
 import { MenuOverlayItems } from '@/components/navigation/MenuOverlay';
 import { HeaderItems } from '@/components/navigation/Header';
-import { FooterItems } from '@/components/navigation/Footer';
 import { useToggleThemeHotkey } from './useToggleThemeHotkey';
 
 type MainLayoutProps = {
@@ -49,11 +48,7 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
           <MenuOverlayItems onItemClick={toggleMenuOverlay} />
         </MenuOverlay>
       }
-      footer={
-        <Footer>
-          <FooterItems />
-        </Footer>
-      }
+      footer={<Footer />}
     >
       <Box
         sx={{

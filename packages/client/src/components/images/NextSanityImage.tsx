@@ -20,6 +20,8 @@ type NextSanityImageProps = {
   layout?: NextImageProps['layout'];
   objectFit?: NextImageProps['objectFit'];
   objectPosition?: NextImageProps['objectPosition'];
+  width?: string | number | undefined;
+  height?: string | number | undefined;
 };
 
 export const NextSanityImage = ({
@@ -29,6 +31,8 @@ export const NextSanityImage = ({
   layout = 'fill',
   objectFit = 'cover',
   objectPosition = 'center',
+  height,
+  width,
 }: NextSanityImageProps) => {
   const hotspotValue = useRef<undefined | string>();
 
@@ -54,8 +58,8 @@ export const NextSanityImage = ({
       objectFit={objectFit}
       objectPosition={hotspotValue?.current || objectPosition}
       {...sanityImage}
-      width={layout !== 'fill' ? '100%' : undefined}
-      height={layout !== 'fill' ? '100%' : undefined}
+      width={layout !== 'fill' ? '100%' : width}
+      height={layout !== 'fill' ? '100%' : height}
     />
   );
 };

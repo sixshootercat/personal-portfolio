@@ -1,2 +1,2 @@
-export { BgImage } from "./BgImage";
-export { NextSanityImage } from "./SanityImage";
+export { BgImage } from './BgImage';
+export { NextSanityImage } from './NextSanityImage';

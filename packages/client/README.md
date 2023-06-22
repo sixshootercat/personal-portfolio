@@ -1,3 +1,3 @@
 ## Client
 
-Built using NextJS and Tailwind
+Built using Next.js and TailwindCSS
