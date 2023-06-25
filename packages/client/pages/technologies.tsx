@@ -22,7 +22,7 @@ export const getStaticProps: GetStaticProps = async () => {
   let technologies;
 
   if (getRunningEnvironment() === 'production') {
-    technologies = undefined;
+    technologies = [];
   } else if (getRunningEnvironment() === 'development') {
     technologies = await client.fetch(query);
   }
