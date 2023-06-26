@@ -3,7 +3,7 @@ import { GetStaticProps } from 'next';
 import { groq } from 'next-sanity';
 import { client } from '@/sanity/sanity-client';
 import Head from 'next/head';
-import { getRunningEnvironment } from 'src/helpers';
+import { isDevEnv } from 'src/helpers';
 
 const Technologies = ({ technologies }: { technologies: any }) => {
   return (
@@ -19,13 +19,9 @@ const Technologies = ({ technologies }: { technologies: any }) => {
 export const getStaticProps: GetStaticProps = async () => {
   const query = groq`*[_type == 'technologies']`;
 
-  let technologies;
+  let technologies = isDevEnv() ? await client.fetch(query) : [];
 
-  if (getRunningEnvironment() === 'production') {
-    technologies = [];
-  } else if (getRunningEnvironment() === 'development') {
-    technologies = await client.fetch(query);
-  }
+  console.log({ technologies });
 
   return {
     props: {

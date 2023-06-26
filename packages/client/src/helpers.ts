@@ -1,8 +1,5 @@
-export const getRunningEnvironment = () => {
+export const isDevEnv = () => {
   const env = process.env.NODE_ENV;
-  if (env === 'development') {
-    return 'development';
-  } else if (env === 'production') {
-    return 'production';
-  }
+
+  return env !== 'production';
 };
