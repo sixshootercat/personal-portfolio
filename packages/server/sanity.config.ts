@@ -7,7 +7,7 @@ export default defineConfig({
   name: 'personal-portfolio',
   title: 'Personal Portfolio',
   projectId: 'uxxoqaxi',
-  dataset: 'dev',
+  dataset: 'production',
   plugins: [deskTool(), visionTool()],
   schema: {
     types: schemaTypes,

@@ -35,7 +35,6 @@ const Technologies = ({
 };
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
-  console.log({ preview });
   if (preview) {
     return { props: { preview } };
   }
