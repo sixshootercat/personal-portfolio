@@ -69,3 +69,5 @@ yarn-error.log
 # Secrets
 .env.development
 .env.production
+
+dist
