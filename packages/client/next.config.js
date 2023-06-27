@@ -4,6 +4,9 @@ const nextConfig = {
   eslint: {
     dirs: ['pages', 'src'],
   },
+  images: {
+    domains: ['cdn.sanity.io'],
+  },
 };
 
 module.exports = nextConfig;
