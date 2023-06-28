@@ -1,3 +1,4 @@
+import { vercelDeployTool } from 'sanity-plugin-vercel-deploy';
 import { defineConfig } from 'sanity';
 import { deskTool } from 'sanity/desk';
 import { schemaTypes } from './schemas/schema';
@@ -8,7 +9,7 @@ export default defineConfig({
   title: 'Personal Portfolio',
   projectId: 'uxxoqaxi',
   dataset: 'production',
-  plugins: [deskTool(), visionTool()],
+  plugins: [deskTool(), visionTool(), vercelDeployTool()],
   schema: {
     types: schemaTypes,
   },
