@@ -3955,6 +3955,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sanity/icons@npm:^1.0.8, @sanity/icons@npm:^1.3":
+  version: 1.3.10
+  resolution: "@sanity/icons@npm:1.3.10"
+  peerDependencies:
+    react: ^16.9 || ^17 || ^18
+  checksum: 9c606bc60d4edd3873996b34871cb7480b2f8af4175a6828a9ec02b08d75bc9d38eff3678f969a4363c068bd35258b554fb340425eccbc41d1046490a2fadfa6
+  languageName: node
+  linkType: hard
+
 "@sanity/icons@npm:^2.0.0, @sanity/icons@npm:^2.3.1":
   version: 2.4.1
   resolution: "@sanity/icons@npm:2.4.1"
@@ -4001,6 +4010,19 @@ __metadata:
     split2: ^3.2.2
     tar-fs: ^2.1.1
   checksum: 456fdd1b7be3b491bdd1a595a0b5d12739a6855a63b5dd0c3a854569a031f697e0a7f8618e1174685cb8812a1236e3ad291c2d5abf1bd4eb0d5a8cb0f68330a6
+  languageName: node
+  linkType: hard
+
+"@sanity/incompatible-plugin@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "@sanity/incompatible-plugin@npm:1.0.4"
+  dependencies:
+    "@sanity/icons": ^1.3
+    react-copy-to-clipboard: ^5.1.0
+  peerDependencies:
+    react: ^16.9 || ^17 || ^18
+    react-dom: ^16.9 || ^17 || ^18
+  checksum: 3ca24c2c570a6d9a787eb5314081250481583f286e45a76c03b17b2c2d18caf3fa138bde293d295bf97c561cba30ac931cc00e3fa80bf07a20262a1cddac5730
   languageName: node
   linkType: hard
 
@@ -4167,6 +4189,25 @@ __metadata:
     react-is: ^18
     styled-components: ^5.2
   checksum: 062e87683c0c49bb683aa583cdaccb0fbdf51ec3805c45fb17c92deb0b1dfb60771ef9fd7fdac04f49a3e3027f65c139b5fc8cff364566c3c72726c1400bac9d
+  languageName: node
+  linkType: hard
+
+"@sanity/ui@npm:^1.0.14":
+  version: 1.7.0
+  resolution: "@sanity/ui@npm:1.7.0"
+  dependencies:
+    "@floating-ui/react-dom": 2.0.0
+    "@sanity/color": ^2.2.5
+    "@sanity/icons": ^2.3.1
+    csstype: ^3.1.2
+    framer-motion: ^10.12.16
+    react-refractor: ^2.1.7
+  peerDependencies:
+    react: ^18
+    react-dom: ^18
+    react-is: ^18
+    styled-components: ^5.2
+  checksum: 021eeb27eef8be3058123966d7a9a63a0b0ed4b3c94afba345a708b88aeec43230f9331bac8d80115190663546035ba39a81e0852bfb4c14af79c44342f6fc51
   languageName: node
   linkType: hard
 
@@ -5076,6 +5117,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"axios@npm:^0.24.0":
+  version: 0.24.0
+  resolution: "axios@npm:0.24.0"
+  dependencies:
+    follow-redirects: ^1.14.4
+  checksum: 468cf496c08a6aadfb7e699bebdac02851e3043d4e7d282350804ea8900e30d368daa6e3cd4ab83b8ddb5a3b1e17a5a21ada13fc9cebd27b74828f47a4236316
+  languageName: node
+  linkType: hard
+
 "axobject-query@npm:^2.2.0":
   version: 2.2.0
   resolution: "axobject-query@npm:2.2.0"
@@ -5522,7 +5572,7 @@ __metadata:
     sharp: ^0.31.1
     suspend-react: 0.0.8
     tailwindcss: 3.0.24
-    typescript: 4.7.2
+    typescript: 5.1.3
     uuid: 9.0.0
     valtio: 1.6.1
   languageName: unknown
@@ -7582,7 +7632,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.15.2":
+"follow-redirects@npm:^1.14.4, follow-redirects@npm:^1.15.2":
   version: 1.15.2
   resolution: "follow-redirects@npm:1.15.2"
   peerDependenciesMeta:
@@ -9632,7 +9682,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nanoid@npm:^3.3.6":
+"nanoid@npm:^3.1.20, nanoid@npm:^3.3.6":
   version: 3.3.6
   resolution: "nanoid@npm:3.3.6"
   bin:
@@ -10809,7 +10859,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-copy-to-clipboard@npm:^5.0.4":
+"react-copy-to-clipboard@npm:^5.0.4, react-copy-to-clipboard@npm:^5.1.0":
   version: 5.1.0
   resolution: "react-copy-to-clipboard@npm:5.1.0"
   dependencies:
@@ -11489,6 +11539,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"sanity-plugin-vercel-deploy@npm:3.3.4":
+  version: 3.3.4
+  resolution: "sanity-plugin-vercel-deploy@npm:3.3.4"
+  dependencies:
+    "@sanity/icons": ^1.0.8
+    "@sanity/incompatible-plugin": ^1.0.4
+    "@sanity/ui": ^1.0.14
+    axios: ^0.24.0
+    nanoid: ^3.1.20
+    prop-types: ^15.7.2
+    spacetime: ^6.16.0
+    swr: ^1.1.1
+  peerDependencies:
+    react: ^18
+    sanity: ^3
+  checksum: 040e514fb2119e1a44fae3f4f794b3e4a97c30da014a19f2fe4d954897e42bcfe70deb15c65c1229eaeee07347a4c938c0791c90154656f9d5daa0c816153778
+  languageName: node
+  linkType: hard
+
 "sanity@npm:3.0.0":
   version: 3.0.0
   resolution: "sanity@npm:3.0.0"
@@ -11686,6 +11755,7 @@ __metadata:
     react: 18.2.0
     react-dom: 18.2.0
     sanity: 3.0.0
+    sanity-plugin-vercel-deploy: 3.3.4
     styled-components: 6.0.0-rc.6
   languageName: unknown
   linkType: soft
@@ -11890,6 +11960,13 @@ __metadata:
   version: 1.1.5
   resolution: "space-separated-tokens@npm:1.1.5"
   checksum: 8ef68f1cfa8ccad316b7f8d0df0919d0f1f6d32101e8faeee34ea3a923ce8509c1ad562f57388585ee4951e92d27afa211ed0a077d3d5995b5ba9180331be708
+  languageName: node
+  linkType: hard
+
+"spacetime@npm:^6.16.0":
+  version: 6.16.3
+  resolution: "spacetime@npm:6.16.3"
+  checksum: e5281f86bb328ca20387d92eb0e013c04f8a8602d7c10b6e73e7356544c5f8bdddf889f1f36bcbe8c16187b68fab5c8e2a68e6e6fcdb93aee3e167ae0ac72464
   languageName: node
   linkType: hard
 
@@ -12324,6 +12401,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"swr@npm:^1.1.1":
+  version: 1.3.0
+  resolution: "swr@npm:1.3.0"
+  peerDependencies:
+    react: ^16.11.0 || ^17.0.0 || ^18.0.0
+  checksum: e7a184f0d560e9c8be85c023cc8e65e56a88a6ed46f9394b301b07f838edca23d2e303685319a4fcd620b81d447a7bcb489c7fa0a752c259f91764903c690cdb
+  languageName: node
+  linkType: hard
+
 "symbol-tree@npm:^3.2.4":
   version: 3.2.4
   resolution: "symbol-tree@npm:3.2.4"
@@ -12651,23 +12737,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:4.7.2":
-  version: 4.7.2
-  resolution: "typescript@npm:4.7.2"
+"typescript@npm:5.1.3":
+  version: 5.1.3
+  resolution: "typescript@npm:5.1.3"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 5163585e6b56410f77d5483b698d9489bbee8902c99029eb70cf6d21525a186530ce19a00951af84eefd4a131cc51d0959f5118e25e70ab61f45ac4057dbd1ef
+  checksum: d9d51862d98efa46534f2800a1071a613751b1585dc78884807d0c179bcd93d6e9d4012a508e276742f5f33c480adefc52ffcafaf9e0e00ab641a14cde9a31c7
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@4.7.2#~builtin<compat/typescript>":
-  version: 4.7.2
-  resolution: "typescript@patch:typescript@npm%3A4.7.2#~builtin<compat/typescript>::version=4.7.2&hash=7ad353"
+"typescript@patch:typescript@5.1.3#~builtin<compat/typescript>":
+  version: 5.1.3
+  resolution: "typescript@patch:typescript@npm%3A5.1.3#~builtin<compat/typescript>::version=5.1.3&hash=7ad353"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 7e2b9a9f4a70fb7616f1b0d986977f8e34a74f046202fa7f24fdee79589598277810fa216b3776c20c0683a9235872c73be34fdb93f67f98c1efaca40999422f
+  checksum: 32a25b2e128a4616f999d4ee502aabb1525d5647bc8955e6edf05d7fbc53af8aa98252e2f6ba80bcedfc0260c982b885f3c09cfac8bb65d2924f3133ad1e1e62
   languageName: node
   linkType: hard
 
