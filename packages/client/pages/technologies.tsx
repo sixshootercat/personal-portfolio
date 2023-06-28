@@ -20,17 +20,19 @@ const Technologies = ({
   technologies: any;
   preview: boolean;
 }) => {
-  return preview ? (
-    <PreviewSuspense fallback='...loading'>
-      <div className='mt-24'>
-        <Head>
-          <title>Technologies & Tools</title>
-        </Head>
-        <PreviewTechContent query={query} />
-      </div>
-    </PreviewSuspense>
-  ) : (
-    <TechContent content={technologies} />
+  return (
+    <div className='mt-24'>
+      <Head>
+        <title>Technologies & Tools</title>
+      </Head>
+      {preview ? (
+        <PreviewSuspense fallback='...loading'>
+          <PreviewTechContent query={query} />
+        </PreviewSuspense>
+      ) : (
+        <TechContent content={technologies} />
+      )}
+    </div>
   );
 };
 
@@ -39,6 +41,7 @@ export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
     return { props: { preview } };
   }
 
+  // fetch data only in dev mode to prevent rendering data in production
   let technologies = isDevEnv() ? await client.fetch(query) : [];
 
   return {
