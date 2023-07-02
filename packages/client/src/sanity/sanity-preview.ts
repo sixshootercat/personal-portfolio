@@ -6,7 +6,7 @@ function onPublicAccessOnly() {
 }
 
 /**
- *  custom hook for fetching preview data when authenticated
+ *  custom hook for fetching preview data client-side
  * */
 export const usePreview = definePreview({
   projectId,
