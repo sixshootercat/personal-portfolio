@@ -1,4 +1,4 @@
-import { definePreview } from 'next-sanity/preview';
+import { definePreview } from '@sanity/preview-kit';
 import { projectId, dataset } from './sanity-config';
 
 function onPublicAccessOnly() {
