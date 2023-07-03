@@ -5,7 +5,7 @@ import { client } from '@/sanity/sanity-client';
 import Head from 'next/head';
 import { isDevEnv } from 'src/helpers';
 import { lazy } from 'react';
-import { PreviewSuspense } from 'next-sanity/preview';
+import { PreviewSuspense } from '@sanity/preview-kit';
 
 const PreviewTechContent = lazy(
   () => import('../src/containers/technologies/PreviewTechnologies')
