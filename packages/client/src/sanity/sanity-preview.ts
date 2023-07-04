@@ -1,4 +1,4 @@
-import { definePreview } from '@sanity/preview-kit';
+import { definePreview } from 'next-sanity/preview';
 import { projectId, dataset } from './sanity-config';
 
 function onPublicAccessOnly() {
@@ -11,5 +11,6 @@ function onPublicAccessOnly() {
 export const usePreview = definePreview({
   projectId,
   dataset,
-  onPublicAccessOnly,
+  //TODO: add this back when we know why it is throwing if we are authed
+  // onPublicAccessOnly,
 });
