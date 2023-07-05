@@ -1,16 +1,16 @@
 import { definePreview } from 'next-sanity/preview';
 import { projectId, dataset } from './sanity-config';
 
-// function onPublicAccessOnly() {
-//   throw new Error(`Unable to load preview as you're not logged in`);
-// }
+function onPublicAccessOnly() {
+  throw new Error(`Unable to load preview as you're not logged in`);
+}
 
 /**
- *  custom hook for fetching preview data client-side
- * */
+ *  Custom hook for fetching preview data client-side. Requires authenticating to
+ *  local sanity studio app.
+ **/
 export const usePreview = definePreview({
   projectId,
   dataset,
-  //TODO: add this back when we know why it is throwing if we are authed
-  // onPublicAccessOnly,
+  onPublicAccessOnly,
 });
