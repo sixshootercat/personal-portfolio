@@ -5,7 +5,7 @@ import { client } from '@/sanity/sanity-client';
 import Head from 'next/head';
 import { isDevEnv } from 'src/helpers';
 import { lazy } from 'react';
-import { PreviewSuspense } from 'next-sanity/preview';
+import { PreviewSuspense } from '@sanity/preview-kit';
 
 const PreviewTechContent = lazy(
   () => import('../src/containers/technologies/PreviewTechnologies')
@@ -36,7 +36,11 @@ const Technologies = ({
   );
 };
 
-export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
+export const getStaticProps: GetStaticProps = async (context) => {
+  const { preview = false } = context;
+
+  // if preview mode is enabled by navigating to localhost:3000/api/preview then
+  // we don't fetch data at build time
   if (preview) {
     return { props: { preview } };
   }

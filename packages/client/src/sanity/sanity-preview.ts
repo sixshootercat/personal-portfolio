@@ -6,8 +6,9 @@ function onPublicAccessOnly() {
 }
 
 /**
- *  custom hook for fetching preview data when authenticated
- * */
+ *  Custom hook for fetching preview data client-side. Requires authenticating to
+ *  local sanity studio app.
+ **/
 export const usePreview = definePreview({
   projectId,
   dataset,
