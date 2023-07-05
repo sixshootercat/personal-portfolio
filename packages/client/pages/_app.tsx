@@ -17,6 +17,8 @@ import { config } from '@fortawesome/fontawesome-svg-core';
 config.autoAddCss = false;
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
+  console.log('test log');
+
   const [mantineThemeColor, setMantineThemeColor] =
     useLocalStorage<ColorScheme>({
       key: 'mantine-color-scheme',
