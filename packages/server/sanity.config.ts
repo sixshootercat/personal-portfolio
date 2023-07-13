@@ -7,7 +7,7 @@ import { visionTool } from '@sanity/vision';
 export default defineConfig([
   {
     name: 'personal-portfolio-prod',
-    title: 'Personal Portfolio',
+    title: 'Personal Portfolio Prod',
     projectId: 'uxxoqaxi',
     dataset: 'production',
     plugins: [deskTool(), visionTool(), vercelDeployTool()],
@@ -18,7 +18,7 @@ export default defineConfig([
   },
   {
     name: 'personal-portfolio-dev',
-    title: 'Personal Portfolio',
+    title: 'Personal Portfolio Dev',
     projectId: 'uxxoqaxi',
     dataset: 'dev',
     plugins: [deskTool(), visionTool(), vercelDeployTool()],
