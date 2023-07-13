@@ -5,7 +5,14 @@ module.exports = {
     'src/containers/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        slate: {
+          925: '#10182c',
+          950: '#020617',
+        },
+      },
+    },
   },
   darkMode: 'class',
   plugins: [],

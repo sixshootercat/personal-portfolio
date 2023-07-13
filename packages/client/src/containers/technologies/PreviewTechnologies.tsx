@@ -10,7 +10,6 @@ const PreviewTechnologies = ({ query }: { query: any }) => {
   return (
     <>
       <Technologies content={data} />
-      {/**fix this */}
       <Link href='/api/exit-preview'>
         <Button
           className='fixed bottom-0 right-0'

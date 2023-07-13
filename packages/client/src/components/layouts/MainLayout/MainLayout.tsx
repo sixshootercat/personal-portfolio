@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Footer, Header, MenuOverlay } from '@/components/navigation';
-import { AppShell, useMantineTheme, Box } from '@mantine/core';
+import { AppShell } from '@mantine/core';
 import { useIsSSR } from '@/hooks';
 import { useScrollLock } from '@mantine/hooks';
 import { MenuOverlayItems } from '@/components/navigation/MenuOverlay';
@@ -12,7 +12,6 @@ type MainLayoutProps = {
 };
 
 export const MainLayout = ({ children }: MainLayoutProps) => {
-  const theme = useMantineTheme();
   const [, setScrollLocked] = useScrollLock(false);
   const isSSR = useIsSSR();
   const [isNavMenuOpen, setIsNavMenuOpen] = useState(false);
@@ -29,15 +28,7 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
 
   return (
     <AppShell
-      styles={{
-        main: {
-          background:
-            theme.colorScheme === 'dark'
-              ? theme.colors.dark[8]
-              : theme.colors.gray[0],
-        },
-      }}
-      padding={0}
+      className='dark:bg-slate-950 bg-zinc-100 px-4'
       header={
         <Header>
           <HeaderItems isOpen={isNavMenuOpen} onClick={toggleMenuOverlay} />
@@ -50,13 +41,7 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
       }
       footer={<Footer />}
     >
-      <Box
-        sx={{
-          padding: '15px 5%',
-        }}
-      >
-        {children}
-      </Box>
+      <div className='max-w-[1440px] m-auto px-4 py-4'>{children}</div>
     </AppShell>
   );
 };

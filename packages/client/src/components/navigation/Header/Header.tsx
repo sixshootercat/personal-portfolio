@@ -21,7 +21,6 @@ export const Header = ({ children }: HeaderProps) => {
       sx={{
         'button.mantine-UnstyledButton-root': {
           marginLeft: 'auto',
-          marginRight: '10px',
         },
         padding: '0 5%',
       }}

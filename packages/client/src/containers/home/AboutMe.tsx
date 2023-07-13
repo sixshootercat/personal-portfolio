@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import { SectionTitle } from './SectionTitle';
+import { Text } from '@mantine/core';
 
 export const AboutMe = () => {
   return (
-    <>
+    <div className='flex items-center flex-col justify-center'>
       <SectionTitle title='👨‍💻 About Me' />
       <div className='my-10 rounded-full overflow-hidden'>
         <Image
@@ -17,8 +18,8 @@ export const AboutMe = () => {
           blurDataURL='/images/profile-kevin.jpg'
         />
       </div>
-      <section className='flex flex-col'>
-        <p>
+      <div className='md:w-5/6'>
+        <Text>
           Pragmatic thinker and problem solver. I&apos;ve been designing and
           developing solutions since 2016. For the past 5 years, I have been
           working as a frontend engineer IC with tools like React, TypeScript,
@@ -27,13 +28,13 @@ export const AboutMe = () => {
           I&apos;m not programming, you can find me reading up on philosophy and
           psychology content, doing physical training, and trying out new
           specialty coffee houses.
-        </p>
+        </Text>
         <br />
-        <p className='mb-6'>
+        <Text>
           Feel free to reach out to me through my contact links to discuss
           potential collaborations or opportunities in software development.
-        </p>
-      </section>
-    </>
+        </Text>
+      </div>
+    </div>
   );
 };
