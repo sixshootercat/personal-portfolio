@@ -27,10 +27,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "4.6.0",
-    "sharp": "^0.31.1",
-    "suspend-react": "0.0.8",
-    "uuid": "9.0.0",
-    "valtio": "1.6.1"
+    "uuid": "9.0.0"
   },
   "devDependencies": {
     "@babel/helper-module-imports": "7.16.7",

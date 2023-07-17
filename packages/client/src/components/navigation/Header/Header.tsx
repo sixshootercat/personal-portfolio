@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { Header as MantineHeader } from '@mantine/core';
-import { useScrollingUp } from 'src/hooks';
+import { useIsSSR, useScrollingUp } from '@/hooks';
 
 type HeaderProps = {
   children: ReactNode;
@@ -8,6 +8,10 @@ type HeaderProps = {
 
 export const Header = ({ children }: HeaderProps) => {
   const showHeader = useScrollingUp();
+  const isSSR = useIsSSR();
+
+  // necessary to prevent mismatch between client and server due to use of window API from useScrollingUp hook
+  if (!isSSR) return null;
 
   const animateSlide = () =>
     showHeader
