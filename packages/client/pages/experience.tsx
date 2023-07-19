@@ -1,4 +1,4 @@
-import { Experience as ExperienceContent } from '@/containers/Experience';
+import { Experience as ExperienceContent } from '@/components/experience';
 import { client } from '@/sanity/sanity-client';
 import { GetStaticProps } from 'next';
 import { groq } from 'next-sanity';

@@ -11,7 +11,7 @@ import {
 } from '@mantine/core';
 import { useLocalStorage } from '@mantine/hooks';
 import { AppProps } from 'next/app';
-import { themeConfig } from '@/config/theme-config';
+import { themeConfig } from '@/config/mantine-theme.config';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
 config.autoAddCss = false;

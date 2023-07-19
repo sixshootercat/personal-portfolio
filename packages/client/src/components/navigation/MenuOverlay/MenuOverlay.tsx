@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { createStyles, Navbar as MantineNavbar } from '@mantine/core';
+import { Navbar as MantineNavbar } from '@mantine/core';
 
 type MenuOverlayProps = {
   children: ReactNode;
@@ -7,25 +7,13 @@ type MenuOverlayProps = {
 };
 
 export const MenuOverlay = ({ children, isOpen }: MenuOverlayProps) => {
-  const { classes } = useStyles();
-
   return (
     <MantineNavbar
       fixed
-      className={classes.container}
-      height='100%'
+      className='md:hidden mt-[90px] h-full'
       hidden={!isOpen}
     >
       {children}
     </MantineNavbar>
   );
 };
-
-const useStyles = createStyles((theme) => ({
-  container: {
-    [theme.fn.largerThan('sm')]: {
-      display: 'none',
-    },
-    marginTop: '90px',
-  },
-}));

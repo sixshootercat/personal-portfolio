@@ -1,1 +1,1 @@
-export { MEDIA_QUERIES } from "./media-queries";
+export { MEDIA_QUERIES } from './media-queries.constants';

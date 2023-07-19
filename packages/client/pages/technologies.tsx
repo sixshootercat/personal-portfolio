@@ -1,4 +1,4 @@
-import { Technologies as TechContent } from '@/containers/technologies/Technologies';
+import { Technologies as TechContent } from '@/components/technologies';
 import { GetStaticProps } from 'next';
 import { groq } from 'next-sanity';
 import { client } from '@/sanity/sanity-client';
@@ -8,7 +8,7 @@ import { lazy } from 'react';
 import { PreviewSuspense } from '@sanity/preview-kit';
 
 const PreviewTechContent = lazy(
-  () => import('../src/containers/technologies/PreviewTechnologies')
+  () => import('../src/components/technologies/PreviewTechnologies')
 );
 
 const query = groq`*[_type == 'technologies']`;

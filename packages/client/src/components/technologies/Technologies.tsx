@@ -1,4 +1,4 @@
-import { WIP } from '@/components/misc';
+import { WIP } from '@/components/wip';
 import React from 'react';
 import { NextSanityImage } from '@/components/images';
 

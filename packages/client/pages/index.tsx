@@ -1,4 +1,4 @@
-import { Home as HomeContent } from '@/containers/home/Home';
+import { Home as HomeContent } from '@/components/home';
 import { GetStaticProps } from 'next';
 import { groq } from 'next-sanity';
 import { client } from '@/sanity/sanity-client';

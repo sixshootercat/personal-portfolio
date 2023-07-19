@@ -1,1 +1,1 @@
-export { themeConfig } from './theme-config';
+export { themeConfig } from './mantine-theme.config';

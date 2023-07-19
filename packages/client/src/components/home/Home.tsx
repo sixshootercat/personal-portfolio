@@ -1,6 +1,4 @@
-import { AboutMe } from './AboutMe';
-import { Technologies } from './Technologies';
-import { ContactMe } from './ContactMe';
+import { AboutMe, ContactMe, Technologies } from './components';
 
 export const Home = ({ items }: { items: any }) => {
   return (

@@ -1,4 +1,4 @@
-import { AboutMe as AboutMeContent } from '@/containers/AboutMe';
+import { AboutMe as AboutMeContent } from '@/components/about-me';
 import Head from 'next/head';
 
 const AboutMe = () => {

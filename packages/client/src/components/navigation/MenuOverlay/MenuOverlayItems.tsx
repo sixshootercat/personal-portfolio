@@ -7,10 +7,8 @@ export const MenuOverlayItems = ({
 }: {
   onItemClick: () => void;
 }) => {
-  // const { toggleColorScheme } = useMantineColorScheme();
-
   return (
-    <div className='flex flex-col h-full '>
+    <div className='flex flex-col h-full'>
       {NAV_ITEMS.map((el) => {
         return (
           <MenuOverlayLinkItem item={el} key={el.id} onClick={onItemClick} />
