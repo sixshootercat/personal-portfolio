@@ -66,9 +66,9 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
-# Secrets
-.env.development
-.env.production
+# secrets
+.env*
+!.env.example
 
 # prod build
 dist

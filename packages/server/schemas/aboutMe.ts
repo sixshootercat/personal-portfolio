@@ -1,24 +1,28 @@
-import { defineType, defineField } from 'sanity';
+import { defineType, defineField } from "sanity";
 
 export const aboutMeType = defineType({
-  name: 'aboutMe',
-  title: 'About Me',
-  type: 'document',
+  name: "aboutMe",
+  title: "About Me",
+  type: "document",
   fields: [
     defineField({
-      name: 'name',
-      title: 'Name',
-      type: 'string',
+      name: "role",
+      title: "Role",
+      type: "string",
     }),
     defineField({
-      name: 'email',
-      title: 'Email',
-      type: 'string',
+      name: "profileImage",
+      title: "Profile Image",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
     }),
     defineField({
-      name: 'message',
-      title: 'Message',
-      type: 'text',
+      name: "biography",
+      title: "Biography",
+      type: "array",
+      of: [{ type: "block" }],
     }),
   ],
 });

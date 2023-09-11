@@ -1,9 +1,9 @@
-import React from 'react';
-import { useRef } from 'react';
-import Image from 'next/image';
-import { useNextSanityImage } from 'next-sanity-image';
-import { ImageProps as NextImageProps } from 'next/image';
-import { client } from '@/sanity/sanity-client';
+import React from "react";
+import { useRef } from "react";
+import Image from "next/image";
+import { useNextSanityImage } from "next-sanity-image";
+import { ImageProps as NextImageProps } from "next/image";
+import { client } from "@/sanity/sanity-client";
 
 type SanityImageObj = {
   _type: string;
@@ -15,31 +15,24 @@ type SanityImageObj = {
 
 type NextSanityImageProps = {
   image: SanityImageObj;
-  quality?: number;
-  priority?: false;
-  layout?: NextImageProps['layout'];
-  objectFit?: NextImageProps['objectFit'];
-  objectPosition?: NextImageProps['objectPosition'];
-  width?: string | number | undefined;
-  height?: string | number | undefined;
-};
+} & Omit<NextImageProps, "src">;
 
 export const NextSanityImage = ({
   image,
   quality = 75,
   priority = false,
-  layout = 'fill',
-  objectFit = 'cover',
-  objectPosition = 'center',
-  height,
-  width,
+  layout = "responsive",
+  objectFit = "cover",
+  objectPosition = "center",
+  height = "auto",
+  width = "100%",
 }: NextSanityImageProps) => {
   const hotspotValue = useRef<undefined | string>();
 
-  const sanityImage = useNextSanityImage(client, image);
+  const imageProps = useNextSanityImage(client, image);
 
   // fallback image
-  if (!sanityImage) {
+  if (!imageProps) {
     return null;
   }
 
@@ -51,15 +44,14 @@ export const NextSanityImage = ({
 
   return (
     <Image
+      {...imageProps}
       priority={priority}
       quality={quality}
       layout={layout}
-      alt={image.alt || 'img'}
+      alt={image.alt || "img"}
       objectFit={objectFit}
       objectPosition={hotspotValue?.current || objectPosition}
-      {...sanityImage}
-      width={layout !== 'fill' ? '100%' : width}
-      height={layout !== 'fill' ? '100%' : height}
+      style={{ width, height }}
     />
   );
 };
