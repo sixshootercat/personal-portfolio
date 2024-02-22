@@ -50,6 +50,7 @@ export const NextSanityImage = ({
       layout={layout}
       alt={image.alt || "img"}
       objectFit={objectFit}
+      placeholder="blur"
       blurDataURL={imageProps.src}
       objectPosition={hotspotValue?.current || objectPosition}
       style={{ width, height }}
