@@ -31,6 +31,8 @@ export const NextSanityImage = ({
 
   const imageProps = useNextSanityImage(client, image);
 
+  console.log({ imageProps });
+
   // fallback image
   if (!imageProps) {
     return null;
@@ -53,7 +55,6 @@ export const NextSanityImage = ({
       placeholder="blur"
       blurDataURL={imageProps.src}
       objectPosition={hotspotValue?.current || objectPosition}
-      style={{ width, height }}
     />
   );
 };
