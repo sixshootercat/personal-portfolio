@@ -40,8 +40,6 @@ export const getStaticProps: GetStaticProps<{
 
   const aboutMe = await client.fetch(ABOUT_ME_QUERY);
 
-  console.log({ aboutMe });
-
   return {
     props: {
       technologies,
